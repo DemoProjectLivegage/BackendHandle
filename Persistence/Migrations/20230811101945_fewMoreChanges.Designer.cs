@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
@@ -11,7 +12,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230811044038_fewMoreChanges")]
+    [Migration("20230811101945_fewMoreChanges")]
     partial class fewMoreChanges
     {
         /// <inheritdoc />
@@ -24,8 +25,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("BorrowerDetailsLoanInformation", b =>
                 {
-                    b.Property<Guid>("BorrowerDetailsBorrowerId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("BorrowerDetailsBorrowerId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("LoanInformationId")
                         .HasColumnType("char(36)");
@@ -39,9 +40,10 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.BorrowerDetails", b =>
                 {
-                    b.Property<Guid>("BorrowerId")
+                    b.Property<int>("BorrowerId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ContactNumber")
                         .HasColumnType("int");

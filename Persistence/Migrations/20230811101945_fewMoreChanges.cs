@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -18,7 +19,8 @@ namespace Persistence.Migrations
                 name: "BorrowersDetails",
                 columns: table => new
                 {
-                    BorrowerId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    BorrowerId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     FullName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ContactNumber = table.Column<int>(type: "int", nullable: false),
@@ -89,7 +91,7 @@ namespace Persistence.Migrations
                 name: "BorrowerDetailsLoanInformation",
                 columns: table => new
                 {
-                    BorrowerDetailsBorrowerId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    BorrowerDetailsBorrowerId = table.Column<int>(type: "int", nullable: false),
                     LoanInformationId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci")
                 },
                 constraints: table =>
