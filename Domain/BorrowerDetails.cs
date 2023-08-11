@@ -1,18 +1,22 @@
 ﻿
 
 
-
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Domain;
-
+using System.ComponentModel.DataAnnotations; using System.ComponentModel.DataAnnotations.Schema; 
 
 public class BorrowerDetails
 {
-       [Key]
-    public   Guid  BorrowerId {set; get;}
-     // public int? ID {set; get;}
+  public BorrowerDetails()
+  {   
+  }
+      [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       public   int  BorrowerId {set; get;}
+
+   
+   
     public  string FullName {set; get;}
 
      public  int ContactNumber {set; get;}

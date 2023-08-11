@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -29,12 +26,8 @@ namespace Application.Borrower
             {
  
                 var borrowerDetails= await _context.BorrowersDetails.ToListAsync();
-                 
-            //   foreach(var details in borrowerDetails)
-            //       {
-            //         details.ID= BitConverter.ToInt32(details.BorrowerId.ToByteArray());
-            //       }
-            return borrowerDetails;
+          
+               return borrowerDetails;
            
         }
                 
