@@ -11,19 +11,19 @@ namespace Domain;
 public class BorrowerDetails
 {
        [Key]
-    public Guid  BorrowerId {set; get;}
+    public   Guid  BorrowerId {set; get;}
+     // public int? ID {set; get;}
+    public  string FullName {set; get;}
 
-    public required string FullName {set; get;}
+     public  int ContactNumber {set; get;}
 
-     public required int ContactNumber {set; get;}
+      public  string MailingAddress {set; get;}
 
-      public required string MailingAddress {set; get;}
+      public  int Zipcode {get; set;}
 
-      public required int Zipcode {get; set;}
+    public   string Email {get;set;}
 
-    public required  string Email {get;set;}
-
-    public required string Occupation {get;set;}
+    public  string Occupation {get;set;}
 public ICollection<LoanInformation> LoanInformation {get;set;}
 
 } 

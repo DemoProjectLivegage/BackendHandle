@@ -11,24 +11,24 @@ namespace Domain
     {
          [ForeignKey("LoanDetails")]
         public required Guid Id {get; set;}
-
+       
         public required int Prior_Servicer_Loan_Id {get; set;}
 
 
         public required DateOnly NoteDate {get; set;}
         public required DateOnly LoanBoardingDate{get; set;}
 
-        public required int NoteRatePercent {get; set;}
+        public required decimal NoteRatePercent {get; set;}
 
         public required bool Escrow {get; set;}
 
-        public required int TaxInsurancePmtAmt {get; set;}
+        public required decimal TaxInsurancePmtAmt {get; set;}
 
-        public required  int TotalLoanAmount {get; set;}
+        public required  decimal TotalLoanAmount {get; set;}
 
         public required int LoanTerm {get; set;}
 
-        public required int LoanType {get; set;}
+        public required decimal LoanType {get; set;}
 
         public required string PaymentFreq {get; set;}
 

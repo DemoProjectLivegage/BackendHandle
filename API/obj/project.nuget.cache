@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Qy5abASvuev+22FScMztg7mr9kpZJ1ITyTIiJsQqkGjAVf9onrWiPWawlyfdsFcIMBoBmpmTOpgql/O+93YHcQ==",
+  "dgSpecHash": "qGqnKKeDrPnNm3FyAzoIXdmrXac5M0HzLGpM9Z4eRq60foUQaGn2739AaCJR/kj3yIE9Y3ntbe13TNtChf+K+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\IMehta\\Desktop\\Database_table\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\IMehta\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.9\\microsoft.aspnetcore.openapi.7.0.9.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.10\\microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",

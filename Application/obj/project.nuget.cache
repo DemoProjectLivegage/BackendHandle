@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qRf2En2t20d3G6yfrW/Sgb8PhZW4N8dnjOiFtIpM23U4f/TgDip+K+QKPDtvBDOMH4T14dIRR7LRiTMaiyFd1Q==",
+  "dgSpecHash": "1ezlPkAEQMk5Z7TA4uJw0eu60cU2+dPNAV0F/yqCe8vc0cqn6aJwacnH/Ht5Z3WP6CZYN3SFFUgvsXp0as0dKQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\IMehta\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\IMehta\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.10\\microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "C:\\Users\\IMehta\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.10\\microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",

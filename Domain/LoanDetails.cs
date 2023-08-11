@@ -12,9 +12,9 @@ namespace Domain
         [Key]
         public required Guid Id {get;set;}
 
-        public required int PIPmtAmt {get; set;}
+        public required decimal PIPmtAmt {get; set;}
 
-        public required int UPBAmt {get; set;}
+        public required decimal UPBAmt {get; set;}
 
         public required decimal RemainingPayments {get; set;}
 

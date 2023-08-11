@@ -5,16 +5,16 @@ namespace Persistence
 {
     public class DatabaseContext :DbContext
     {
-        public DatabaseContext(DbContextOptions options) : base(options)
-        {
+         public DatabaseContext(DbContextOptions options) : base(options)
+     {
             
         }
 
-        public DbSet<BorrowerDetails>  Borrowers {set; get; }
+        public DbSet<BorrowerDetails>  BorrowersDetails {set; get; }
 
-        public DbSet<LoanDetails> Loan_Details {set; get;}
+        public DbSet<LoanDetails> LoanDetails {set; get;}
 
-        public DbSet<LoanInformation> Loan_Information {get; set;}
+        public DbSet<LoanInformation> LoanInformation {get; set;}
 
     }
 }
