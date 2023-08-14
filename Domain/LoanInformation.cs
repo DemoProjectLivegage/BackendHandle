@@ -9,33 +9,37 @@ namespace Domain
 {
     public class LoanInformation
     {
-         [ForeignKey("LoanDetails")]
-        public required Guid Id {get; set;}
+       [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        public  int LoanInformationId {get; set;}
+      
+       // [ForeignKey("BorrowerDetails.BorrowerId")]
+       // public int BorrowerId;
+        public  int PriorServicerLoanId {get; set;}
+
+
+        public  DateOnly NoteDate {get; set;}
+        public  DateOnly LoanBoardingDate{get; set;}
+
+        public decimal NoteRatePercent {get; set;}
+
+        public bool Escrow {get; set;}
+
+        public  decimal TaxInsurancePmtAmt {get; set;}
+
+        public  decimal TotalLoanAmount {get; set;}
+
+        public  int LoanTerm {get; set;}
+
+        public string LoanType {get; set;}
+
+     //  [RegularExpression("Weekely|Biweekly|Monthly", ErrorMessage = "Invalid value.")]
+         public  string PaymentFreq {get; set;}
+
+       public string PrimaryContact {get;set;}
        
-        public required int Prior_Servicer_Loan_Id {get; set;}
 
-
-        public required DateOnly NoteDate {get; set;}
-        public required DateOnly LoanBoardingDate{get; set;}
-
-        public required decimal NoteRatePercent {get; set;}
-
-        public required bool Escrow {get; set;}
-
-        public required decimal TaxInsurancePmtAmt {get; set;}
-
-        public required  decimal TotalLoanAmount {get; set;}
-
-        public required int LoanTerm {get; set;}
-
-        public required decimal LoanType {get; set;}
-
-        public required string PaymentFreq {get; set;}
-
-       public required string PrimaryContact {get;set;}
-       
      public ICollection <BorrowerDetails> BorrowerDetails {get; set;}
 
-      public virtual LoanDetails LoanDetails { get; set; }
+      public  LoanDetails LoanDetails { get; set; }
     }
 }

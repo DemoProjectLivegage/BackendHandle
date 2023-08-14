@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
@@ -20,36 +19,23 @@ namespace Persistence.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("BorrowerDetailsLoanInformation", b =>
-                {
-                    b.Property<int>("BorrowerDetailsBorrowerId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("LoanInformationId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("BorrowerDetailsBorrowerId", "LoanInformationId");
-
-                    b.HasIndex("LoanInformationId");
-
-                    b.ToTable("BorrowerDetailsLoanInformation");
-                });
-
             modelBuilder.Entity("Domain.BorrowerDetails", b =>
                 {
                     b.Property<int>("BorrowerId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ContactNumber")
                         .HasColumnType("int");
+
+                    b.Property<string>("ContactNumber")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
                     b.Property<string>("FullName")
                         .HasColumnType("longtext");
+
+                    b.Property<int?>("LoanInformationId")
+                        .HasColumnType("int");
 
                     b.Property<string>("MailingAddress")
                         .HasColumnType("longtext");
@@ -62,14 +48,19 @@ namespace Persistence.Migrations
 
                     b.HasKey("BorrowerId");
 
+                    b.HasIndex("LoanInformationId");
+
                     b.ToTable("BorrowersDetails");
                 });
 
             modelBuilder.Entity("Domain.LoanDetails", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("LoanId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoanInformationId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("PIPmtAmt")
                         .HasColumnType("decimal(65,30)");
@@ -86,15 +77,19 @@ namespace Persistence.Migrations
                     b.Property<decimal>("UPBAmt")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                    b.HasKey("LoanId");
+
+                    b.HasIndex("LoanInformationId")
+                        .IsUnique();
 
                     b.ToTable("LoanDetails");
                 });
 
             modelBuilder.Entity("Domain.LoanInformation", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("LoanInformationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<bool>("Escrow")
                         .HasColumnType("tinyint(1)");
@@ -105,8 +100,8 @@ namespace Persistence.Migrations
                     b.Property<int>("LoanTerm")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("LoanType")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<string>("LoanType")
+                        .HasColumnType("longtext");
 
                     b.Property<DateOnly>("NoteDate")
                         .HasColumnType("date");
@@ -120,7 +115,7 @@ namespace Persistence.Migrations
                     b.Property<string>("PrimaryContact")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Prior_Servicer_Loan_Id")
+                    b.Property<int>("PriorServicerLoanId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("TaxInsurancePmtAmt")
@@ -129,40 +124,34 @@ namespace Persistence.Migrations
                     b.Property<decimal>("TotalLoanAmount")
                         .HasColumnType("decimal(65,30)");
 
-                    b.HasKey("Id");
+                    b.HasKey("LoanInformationId");
 
                     b.ToTable("LoanInformation");
                 });
 
-            modelBuilder.Entity("BorrowerDetailsLoanInformation", b =>
+            modelBuilder.Entity("Domain.BorrowerDetails", b =>
                 {
-                    b.HasOne("Domain.BorrowerDetails", null)
-                        .WithMany()
-                        .HasForeignKey("BorrowerDetailsBorrowerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.LoanInformation", null)
-                        .WithMany()
-                        .HasForeignKey("LoanInformationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.LoanInformation", b =>
-                {
-                    b.HasOne("Domain.LoanDetails", "LoanDetails")
-                        .WithOne("LoanInformation")
-                        .HasForeignKey("Domain.LoanInformation", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LoanDetails");
+                        .WithMany("BorrowerDetails")
+                        .HasForeignKey("LoanInformationId");
                 });
 
             modelBuilder.Entity("Domain.LoanDetails", b =>
                 {
+                    b.HasOne("Domain.LoanInformation", "LoanInformation")
+                        .WithOne("LoanDetails")
+                        .HasForeignKey("Domain.LoanDetails", "LoanInformationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("LoanInformation");
+                });
+
+            modelBuilder.Entity("Domain.LoanInformation", b =>
+                {
+                    b.Navigation("BorrowerDetails");
+
+                    b.Navigation("LoanDetails");
                 });
 #pragma warning restore 612, 618
         }

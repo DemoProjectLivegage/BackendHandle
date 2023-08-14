@@ -9,8 +9,8 @@ namespace Domain
 {
     public class LoanDetails
     { 
-        [Key]
-        public required Guid Id {get;set;}
+       [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int LoanId {get;set;}
 
         public required decimal PIPmtAmt {get; set;}
 
@@ -22,6 +22,8 @@ namespace Domain
 
         public required string PropertyAddress {get; set;}
         
-         public virtual LoanInformation LoanInformation { get; set; }
+
+       public int LoanInformationId {get; set;}
+       public LoanInformation LoanInformation {get; set;}
     }
 }

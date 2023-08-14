@@ -16,7 +16,7 @@ namespace Persistence
         {
           
             FullName="Ishan",
-            ContactNumber=23567890,
+            ContactNumber="23567890",
             MailingAddress="New ARea1"
         },
 
@@ -24,7 +24,7 @@ namespace Persistence
         {
             
             FullName="Ishani",
-            ContactNumber=235678901,
+            ContactNumber="235678901",
             MailingAddress="New ARea2"
         },
 
@@ -32,7 +32,7 @@ namespace Persistence
         {
            
             FullName="Isha",
-            ContactNumber=23567894,
+            ContactNumber="23567894",
             MailingAddress="New ARea3"
         },
 
@@ -40,7 +40,7 @@ namespace Persistence
         {
         
             FullName="Isnaa",
-            ContactNumber=23567899,
+            ContactNumber="23567899",
             MailingAddress="New ARea4"
         },
      };
