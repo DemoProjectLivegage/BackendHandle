@@ -15,19 +15,21 @@ public class BorrowerDetails
       [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
        public   int  BorrowerId {set; get;}
 
-   
-   
-    public  string FullName {set; get;}
+    public   string FullName {set; get;}
 
-     public  int ContactNumber {set; get;}
+       [DataType(DataType.PhoneNumber)]
+     public  string ContactNumber {set; get;}
 
-      public  string MailingAddress {set; get;}
+      public string MailingAddress {set; get;}
 
+      //  [DataType(DataType.PostalCode)]
       public  int Zipcode {get; set;}
 
+   // [DataType(DataType.EmailAddress)]
     public   string Email {get;set;}
 
     public  string Occupation {get;set;}
-public ICollection<LoanInformation> LoanInformation {get;set;}
+   
+   
 
 } 

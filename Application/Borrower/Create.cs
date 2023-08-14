@@ -13,21 +13,6 @@ namespace Application.Borrower
         {
           
         }
-         public class BorrowerDetailsMap : ClassMap<BorrowerDetails>
-        {
-            public BorrowerDetailsMap()
-            {
-                 Map(m => m.FullName).Name("FullName");
-                Map(m => m.ContactNumber).Name("ContactNumber");
-                Map(m => m.MailingAddress).Name("MailingAddress");
-                Map(m=>m.Zipcode).Name("ZipCode");
-                Map(m=>m.Email).Name("Email");
-                Map(m=>m.Occupation).Name("Occupation");
-
-                
-                Map(m => m.BorrowerId).Ignore();
-            }
-        }
 
         public class Handler : IRequestHandler<Command>
         {  
@@ -42,8 +27,7 @@ namespace Application.Borrower
             public  async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture){
-                    IgnoreBlankLines = true,
-                     PrepareHeaderForMatch = args => args.Header.ToLower(),
+                    
                     
                 };
                 
@@ -51,22 +35,137 @@ namespace Application.Borrower
               using (var reader = new StreamReader(@"C:\Users\IMehta\Downloads\Loan_data.csv"))
             using (var csv = new CsvReader(reader, configuration))
             {
-               csv.Context.RegisterClassMap<BorrowerDetailsMap>();
-                var records = csv.GetRecords<BorrowerDetails>(); 
-                
-                foreach (var record in records)
-                { 
+              
+            var records = csv.GetRecords<Types>();
                     
-                      _context.BorrowersDetails.Add(record);   
-                   _logger.LogInformation(Convert.ToString(record));
-                
+                       var loaninformation=new List<LoanInformation>{};
+                    var borrowers = new List<BorrowerDetails>{};
+                    var loans=new List<LoanDetails>{};
+                 
+                    foreach (var record in records)
+                    {
+                        if (record != null)
+
+                        {
+                             loaninformation.Add(new LoanInformation
+                    { // BorrowerId=record.BorrowerId,
+                       PriorServicerLoanId=record.PriorServicerLoanId,
+                      NoteDate=record.NoteDate,
+                      LoanBoardingDate=record.LoanBoardingDate,
+                      NoteRatePercent=record.NoteRatePercent,
+                      Escrow=record.Escrow,
+                      TaxInsurancePmtAmt=record.TaxInsurancePmtAmt,
+                      TotalLoanAmount=record.TotalLoanAmount,
+                      LoanTerm=record.LoanTerm,
+                      LoanType=record.LoanType,
+                      PaymentFreq=record.PaymentFreq,
+                      PrimaryContact=record.PrimaryContact
+
+
+                    });
+                            borrowers.Add(new BorrowerDetails
+
+                            {
+                                FullName = record.FullName,
+
+                                ContactNumber = record.ContactNumber,
+
+                                MailingAddress = record.MailingAddress,
+
+                                Email = record.Email,
+
+                                Occupation = record.Occupation,
+
+                                Zipcode = record.Zipcode
+
+                            }); 
+                          
+                    loans.Add(new LoanDetails
+                    {
+                        PIPmtAmt = record.PIPmtAmt,
+                        UPBAmt = record.UPBAmt,
+                        RemainingPayments = record.RemainingPayments,
+                        PmtDueDate = record.PmtDueDate,
+                        PropertyAddress = record.PropertyAddress,
+                    });
+                   
+
+                        }
+                    }
+                     await _context.LoanInformation.AddRangeAsync(loaninformation);
+                     
+                      
+                    await _context.BorrowersDetails.AddRangeAsync(borrowers);
+                    await _context.LoanDetails.AddRangeAsync(loans);
+                   
+                    await _context.SaveChangesAsync();
+
                 }
 
-                await _context.SaveChangesAsync();
+                return Unit.Value;
+
             }
-            return Unit.Value;
+
+        }
+
+        class Types
+
+        {  
+            //Borrower Details Table
+            public string FullName { set; get; }
+
+            public string ContactNumber { set; get; }
+
+            public string MailingAddress { set; get; }
+
+            public int Zipcode { get; set; }
+
+            public string Email { get; set; }
+
+            public string Occupation { get; set; }
+
+
+          //Loan Details Table
+          public decimal PIPmtAmt {get; set;}
+
+        public decimal UPBAmt {get; set;}
+
+        public  decimal RemainingPayments {get; set;}
+
+        public DateOnly PmtDueDate {get; set;}
+
+        public required string PropertyAddress {get; set;}
+
+
+        //Loan Information Table
+
+
+       //  public int BorrowerId {get; set;}
+         public  int PriorServicerLoanId {get; set;}
+
+         public  DateOnly NoteDate {get; set;}
+        public  DateOnly LoanBoardingDate{get; set;}
+
+        public decimal NoteRatePercent {get; set;}
+
+        public bool Escrow {get; set;}
+
+        public  decimal TaxInsurancePmtAmt {get; set;}
+
+        public  decimal TotalLoanAmount {get; set;}
+
+        public  int LoanTerm {get; set;}
+
+        public string LoanType {get; set;}
+
+       
+         public  string PaymentFreq {get; set;}
+
+       public string PrimaryContact {get;set;}
+        }
+        
             }
         }
 
-    }
-}
+    
+

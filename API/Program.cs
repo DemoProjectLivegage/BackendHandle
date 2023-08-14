@@ -45,6 +45,14 @@ var services=scope.ServiceProvider;
 var context=services.GetRequiredService<DatabaseContext>();
    await  context.Database.MigrateAsync();
   await Seed.SeedData(context);
+  var borrower=context.BorrowersDetails;
+   var logger=services.GetRequiredService<ILogger<Program>>();
+  foreach(var ids in borrower)
+  {
+    int pk= ids.BorrowerId;
+  
+   logger.LogInformation($"Primary key value: {pk}");
+  }
 }
  catch(Exception ex )
  {
