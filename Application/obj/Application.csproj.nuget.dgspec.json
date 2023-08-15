@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\Application.csproj": {}
+    "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\Application.csproj": {
+    "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Application\\obj\\",
+        "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj"
+              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\Persistence.csproj"
+              "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -80,24 +78,22 @@
         }
       }
     },
-    "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj": {
+    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\obj\\",
+        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -145,32 +141,30 @@
         }
       }
     },
-    "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\Persistence.csproj": {
+    "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Persistence\\obj\\",
+        "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "d:\\Demo\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\Database_table\\Domain\\Domain.csproj"
+              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }
@@ -190,10 +184,6 @@
               "version": "[30.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[7.0.10, )"
             },

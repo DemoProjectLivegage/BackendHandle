@@ -34,9 +34,6 @@ namespace Persistence.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("LoanInformationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MailingAddress")
                         .HasColumnType("longtext");
 
@@ -47,8 +44,6 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("BorrowerId");
-
-                    b.HasIndex("LoanInformationId");
 
                     b.ToTable("BorrowersDetails");
                 });
@@ -79,9 +74,6 @@ namespace Persistence.Migrations
 
                     b.HasKey("LoanId");
 
-                    b.HasIndex("LoanInformationId")
-                        .IsUnique();
-
                     b.ToTable("LoanDetails");
                 });
 
@@ -89,6 +81,9 @@ namespace Persistence.Migrations
                 {
                     b.Property<int>("LoanInformationId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("BorrowerId")
                         .HasColumnType("int");
 
                     b.Property<bool>("Escrow")
@@ -127,31 +122,6 @@ namespace Persistence.Migrations
                     b.HasKey("LoanInformationId");
 
                     b.ToTable("LoanInformation");
-                });
-
-            modelBuilder.Entity("Domain.BorrowerDetails", b =>
-                {
-                    b.HasOne("Domain.LoanInformation", null)
-                        .WithMany("BorrowerDetails")
-                        .HasForeignKey("LoanInformationId");
-                });
-
-            modelBuilder.Entity("Domain.LoanDetails", b =>
-                {
-                    b.HasOne("Domain.LoanInformation", "LoanInformation")
-                        .WithOne("LoanDetails")
-                        .HasForeignKey("Domain.LoanDetails", "LoanInformationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LoanInformation");
-                });
-
-            modelBuilder.Entity("Domain.LoanInformation", b =>
-                {
-                    b.Navigation("BorrowerDetails");
-
-                    b.Navigation("LoanDetails");
                 });
 #pragma warning restore 612, 618
         }

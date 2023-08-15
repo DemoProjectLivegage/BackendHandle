@@ -3,7 +3,9 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
+using Microsoft.VisualBasic;
 using Persistence;
 namespace Application.Borrower
 {
@@ -19,6 +21,8 @@ namespace Application.Borrower
             private readonly DatabaseContext _context;
             private readonly ILogger<Create> _logger;
 
+            // private List<EntityEntry> _obj = new List<EntityEntry>();
+
             public Handler(DatabaseContext context, ILogger<Create> logger)
             {
                 _context = context;
@@ -30,158 +34,143 @@ namespace Application.Borrower
                 {
                 };
 
-                using (var reader = new StreamReader(@"C:\Users\IMehta\Downloads\Loan_data.csv"))
+                using (var reader = new StreamReader(@"C:\Users\VSingh\Downloads\Loan_data (1).csv"))
                 using (var csv = new CsvReader(reader, configuration))
                 {
-
-                    var records = csv.GetRecords<Types>();
-                    var secondRecord = records;
-                    var loaninformation = new List<LoanInformation> { };
+                    /*
+                    * First I have stored the data of borrower details. So, that i could get the 
+                    * Borrower details Id from changes and then use them further.
+                    * For creating object normal for loop has been used because foreach loop change the value of current 
+                    * pointer and make the object unusable.
+                    */
+                    var borrowerRecords = csv.GetRecords<BorrowerTypes>();
                     var borrowers = new List<BorrowerDetails> { };
-                    var loans = new List<LoanDetails> { };
+                    var data = borrowerRecords.ToArray();
 
-
-                          foreach (var record in records)
-                      {
-                        if (record != null)
-
+                    for (var i = 0; i < data.Length; i++)
+                    {
+                        if (data[i] != null)
                         {
                             borrowers.Add(new BorrowerDetails
                             {
-                                FullName = record.FullName,
-                                ContactNumber = record.ContactNumber,
-
-                                MailingAddress = record.MailingAddress,
-
-                                Email = record.Email,
-
-                                Occupation = record.Occupation,
-
-                                Zipcode = record.Zipcode
+                                FullName = data[i].FullName,
+                                ContactNumber = data[i].ContactNumber,
+                                MailingAddress = data[i].MailingAddress,
+                                Email = data[i].Email,
+                                Occupation = data[i].Occupation,
+                                Zipcode = data[i].Zipcode
 
                             });
                         }
                     }
-                        
-                    records=secondRecord;
-                    
-                    await _context.BorrowersDetails.AddRangeAsync(borrowers);
-                    await _context.SaveChangesAsync();
-                    foreach (var record in records)
+                    _context.AddRange(borrowers);
+                    _context.SaveChanges();
+                    var obj = _context.ChangeTracker.Entries().ToArray();
+                    //Here I'm saving the data into loan information table 
+                    var loanInformation = new List<LoanInformation> { };
+                    var count = 0;
+                    for (var i = 0; i < data.Length; i++)
                     {
-                        if (record != null)
-
+                        if (obj[count].Entity is BorrowerDetails borrowerDetails)
                         {
-                            loaninformation.Add(new LoanInformation
-                            { // BorrowerId=record.BorrowerId,
-                                PriorServicerLoanId = record.PriorServicerLoanId,
-                                NoteDate = record.NoteDate,
-                                LoanBoardingDate = record.LoanBoardingDate,
-                                NoteRatePercent = record.NoteRatePercent,
-                                Escrow = record.Escrow,
-                                TaxInsurancePmtAmt = record.TaxInsurancePmtAmt,
-                                TotalLoanAmount = record.TotalLoanAmount,
-                                LoanTerm = record.LoanTerm,
-                                LoanType = record.LoanType,
-                                PaymentFreq = record.PaymentFreq,
-                                PrimaryContact = record.PrimaryContact
-                            });
-                        }
-                    }
-                     records=secondRecord;
-                      await _context.LoanInformation.AddRangeAsync(loaninformation);
-                       await _context.SaveChangesAsync();
-                    
-                   
-                    
-                
-                     foreach (var record in records)
-                    {
-                        if (record != null)
-
-                        {
-                            loans.Add(new LoanDetails
+                            if (data[i] != null)
                             {
-                                PIPmtAmt = record.PIPmtAmt,
-                                UPBAmt = record.UPBAmt,
-                                RemainingPayments = record.RemainingPayments,
-                                PmtDueDate = record.PmtDueDate,
-                                PropertyAddress = record.PropertyAddress,
-                            });
+                                loanInformation.Add(new LoanInformation
+                                {
+                                    NoteRatePercent = Convert.ToDecimal(data[i].NoteRatePercent),
+                                    Escrow = data[i].Escrow,
+                                    TaxInsurancePmtAmt = data[i].TaxInsurancePmtAmt,
+                                    TotalLoanAmount = data[i].TotalLoanAmount,
+                                    LoanTerm = data[i].LoanTerm,
+                                    LoanType = data[i].LoanType,
+                                    PaymentFreq = data[i].PaymentFreq,
+                                    PrimaryContact = data[i].PrimaryContact,
+                                    BorrowerId = borrowerDetails.BorrowerId,
 
-
+                                });
+                                count += 1;
+                            }
                         }
                     }
-                   
-                  
-                    await _context.LoanDetails.AddRangeAsync(loans);
-                    await _context.SaveChangesAsync();
+                    _context.AddRange(loanInformation);
+                    _context.SaveChanges();
+                    obj = _context.ChangeTracker.Entries().ToArray();
+
+                    var loanDetails = new List<LoanDetails> { };
+                    count = 0; // Re set the value of count so that we can use it again
+
+                    for (var i = 0; i < data.Length; i++)
+                    {
+                        if (obj[count].Entity is LoanInformation loanInfo)
+                        {
+                            if (data[i] != null)
+                            {
+                                loanDetails.Add(new LoanDetails
+                                {
+                                    PIPmtAmt = data[i].PIPmtAmt,
+                                    UPBAmt = data[i].UPBAmt,
+                                    RemainingPayments = data[i].RemainingPayments,
+                                    PmtDueDate = data[i].PmtDueDate,
+                                    PropertyAddress = data[i].PropertyAddress,
+                                    LoanInformationId = loanInfo.LoanInformationId,
+                                });
+                            }
+                        }
+                        count += 1;
+                    }
+                    _context.AddRange(loanDetails);
+                    _context.SaveChanges();
+                    foreach (var s in _context.ChangeTracker.Entries().ToArray())
+                    {
+                        _logger.LogInformation("\n\n\n" + s + "\n\n\n");
+                    }
+
                 }
-
                 return Unit.Value;
-
             }
-
         }
+    }
 
-        class Types
+    class BorrowerTypes
 
-        {
-            //Borrower Details Table
-            public string FullName { set; get; }
-
-            public string ContactNumber { set; get; }
-
-            public string MailingAddress { set; get; }
-
-            public int Zipcode { get; set; }
-
-            public string Email { get; set; }
-
-            public string Occupation { get; set; }
-
-
-            //Loan Details Table
-            public decimal PIPmtAmt { get; set; }
-
-            public decimal UPBAmt { get; set; }
-
-            public decimal RemainingPayments { get; set; }
-
-            public DateOnly PmtDueDate { get; set; }
-
-            public required string PropertyAddress { get; set; }
+    {
+        //Borrower Details Table
+        public string FullName { set; get; }
+        public string ContactNumber { set; get; }
+        public string MailingAddress { set; get; }
+        public int Zipcode { get; set; }
+        public string Email { get; set; }
+        public string Occupation { get; set; }
+        //Loan Details Table
+        public decimal PIPmtAmt { get; set; }
+        public decimal UPBAmt { get; set; }
+        public decimal RemainingPayments { get; set; }
+        public DateOnly PmtDueDate { get; set; }
+        public required string PropertyAddress { get; set; }
 
 
-            //Loan Information Table
+        //Loan Information Table
+
+        public int PriorServicerLoanId { get; set; }
+
+        public DateOnly NoteDate { get; set; }
+        public DateOnly LoanBoardingDate { get; set; }
+
+        public decimal NoteRatePercent { get; set; }
+
+        public bool Escrow { get; set; }
+
+        public decimal TaxInsurancePmtAmt { get; set; }
+
+        public decimal TotalLoanAmount { get; set; }
+
+        public int LoanTerm { get; set; }
+
+        public string LoanType { get; set; }
 
 
-            //  public int BorrowerId {get; set;}
-            public int PriorServicerLoanId { get; set; }
+        public string PaymentFreq { get; set; }
 
-            public DateOnly NoteDate { get; set; }
-            public DateOnly LoanBoardingDate { get; set; }
-
-            public decimal NoteRatePercent { get; set; }
-
-            public bool Escrow { get; set; }
-
-            public decimal TaxInsurancePmtAmt { get; set; }
-
-            public decimal TotalLoanAmount { get; set; }
-
-            public int LoanTerm { get; set; }
-
-            public string LoanType { get; set; }
-
-
-            public string PaymentFreq { get; set; }
-
-            public string PrimaryContact { get; set; }
-        }
-
+        public string PrimaryContact { get; set; }
     }
 }
-
-
-
