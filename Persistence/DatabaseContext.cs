@@ -12,11 +12,11 @@ namespace Persistence
         public DbSet<BorrowerDetails> BorrowersDetails { set; get; }
         public DbSet<LoanInformation> LoanInformation { get; set; }
         public DbSet<LoanDetails> LoanDetails { set; get; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<LoanInformation>()
-                   .HasOne<LoanDetails>(p => p.LoanDetails)
-                   .WithOne(s => s.LoanInformation);
-        }
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     modelBuilder.Entity<LoanInformation>()
+        //            .HasOne<LoanDetails>(p => p.LoanDetails)
+        //            .WithOne(s => s.LoanInformation);
+        // }
     }
 }

@@ -10,3 +10,15 @@ C:\Users\IMehta\Desktop\Database_table\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\IMehta\Desktop\Database_table\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\IMehta\Desktop\Database_table\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\IMehta\Desktop\Database_table\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\Demo\BackendHandle\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\Demo\BackendHandle\Domain\bin\Debug\net7.0\Domain.dll
+D:\Demo\BackendHandle\Domain\bin\Debug\net7.0\Domain.pdb
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.dll
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\Domain.pdb
+D:\Demo\BackendHandle\Domain\obj\Debug\net7.0\ref\Domain.dll
