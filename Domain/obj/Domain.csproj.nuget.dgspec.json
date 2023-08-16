@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {}
+    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }

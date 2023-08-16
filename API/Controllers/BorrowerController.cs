@@ -19,5 +19,11 @@ namespace API.Controllers
         {
             return Ok( await Mediator.Send(new Create.Command()));
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<BorrowerDetails>> GetBorrowers(int Id)
+        
+        {
+            return await Mediator.Send(new Details.Query{BorrowerId=Id});
+        }
     }
 }

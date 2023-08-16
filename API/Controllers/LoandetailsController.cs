@@ -15,7 +15,14 @@ namespace API.Controllers
         [HttpGet] 
         public async Task<ActionResult<List<LoanDetails>>> GetActivities()
         {
-             return await Mediator.Send(new List.Query());
+             return await Mediator.Send(new LoanDetailList.Query());
+        }
+
+        [HttpGet("{id}")]
+
+        public async Task<ActionResult<LoanDetails>> GetLoanDetails(int id)
+        {
+            return await Mediator.Send(new Loandetail.Query{LoanInformationId=id});
         }
     }
     }

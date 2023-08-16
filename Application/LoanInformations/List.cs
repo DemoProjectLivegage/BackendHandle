@@ -12,6 +12,11 @@ namespace Application.LoanInformations
 {
     public class List
     {
+        public static implicit operator List(List<LoanInformation> v)
+        {
+            throw new NotImplementedException();
+        }
+
         public class Query : IRequest<List<LoanInformation>> {}
 
         public class Handler : IRequestHandler<Query, List<LoanInformation>>

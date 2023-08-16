@@ -28,13 +28,13 @@ namespace Application.Borrower
                 _context = context;
                 _logger = logger;
             }
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                 };
 
-                using (var reader = new StreamReader(@"C:\Users\VSingh\Downloads\Loan_data (1).csv"))
+                using (var reader = new StreamReader(@"C:\Users\IMehta\Downloads\Loan_data.csv"))
                 using (var csv = new CsvReader(reader, configuration))
                 {
                     /*
@@ -95,12 +95,15 @@ namespace Application.Borrower
                     _context.AddRange(loanInformation);
                     _context.SaveChanges();
                     obj = _context.ChangeTracker.Entries().ToArray();
-
+                    
+                 // _logger.LogInformation("values of obj \n \n \n "+obj[count]+"\n\n\n");
                     var loanDetails = new List<LoanDetails> { };
-                    count = 0; // Re set the value of count so that we can use it again
+                    //count = 0; // Re set the value of count so that we can use it again
 
                     for (var i = 0; i < data.Length; i++)
                     {
+                       //var infos= loanInformation.ToArray();
+
                         if (obj[count].Entity is LoanInformation loanInfo)
                         {
                             if (data[i] != null)
@@ -114,19 +117,20 @@ namespace Application.Borrower
                                     PropertyAddress = data[i].PropertyAddress,
                                     LoanInformationId = loanInfo.LoanInformationId,
                                 });
+                                 count+=1; 
                             }
+                            
                         }
-                        count += 1;
+                      
                     }
+                  
+
+
                     _context.AddRange(loanDetails);
                     _context.SaveChanges();
-                    foreach (var s in _context.ChangeTracker.Entries().ToArray())
-                    {
-                        _logger.LogInformation("\n\n\n" + s + "\n\n\n");
-                    }
 
                 }
-                return Unit.Value;
+                return Task.FromResult(Unit.Value);
             }
         }
     }
@@ -142,6 +146,7 @@ namespace Application.Borrower
         public string Email { get; set; }
         public string Occupation { get; set; }
         //Loan Details Table
+      
         public decimal PIPmtAmt { get; set; }
         public decimal UPBAmt { get; set; }
         public decimal RemainingPayments { get; set; }

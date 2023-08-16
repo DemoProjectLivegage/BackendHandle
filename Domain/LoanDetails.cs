@@ -24,6 +24,6 @@ namespace Domain
         
 
        public int LoanInformationId {get; set;}
-    //    public int LoanInformationId {get; set;}
+    //   public int LoanInformationId {get; set;}
     }
 }

@@ -9,11 +9,9 @@ using Persistence;
 
 namespace Application.LoansDetails
 {
-   
-         public class List
+    public class LoanDetailList
     {
-
-      public class Query : IRequest<List<LoanDetails>>{ }
+          public class Query : IRequest<List<LoanDetails>>{ }
 
         public class Handler : IRequestHandler<Query, List<LoanDetails>>
         { 
@@ -37,7 +35,5 @@ namespace Application.LoansDetails
                 
         }
 
-
-        
     }
-    }
+}
