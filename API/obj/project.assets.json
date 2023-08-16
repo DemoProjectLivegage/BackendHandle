@@ -4333,26 +4333,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IMehta\\.nuget\\packages\\": {}
+    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj",
+      "projectUniqueName": "D:\\Demo\\BackendHandle\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\obj\\",
+      "projectPath": "D:\\Demo\\BackendHandle\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+      "outputPath": "D:\\Demo\\BackendHandle\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -4360,8 +4358,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj"
+            "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {
+              "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj"
             }
           }
         }
