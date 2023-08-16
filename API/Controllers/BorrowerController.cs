@@ -24,7 +24,6 @@ namespace API.Controllers
             if (fileData != null && fileData.Length > 0)
             {
                 tempFilePath = Path.GetTempFileName();
-                Console.WriteLine("\n\n\n"+tempFilePath+"\n\n\n");
                 using (stream = new FileStream(tempFilePath,FileMode.Create))
                 {
                     await fileData.CopyToAsync(stream);
