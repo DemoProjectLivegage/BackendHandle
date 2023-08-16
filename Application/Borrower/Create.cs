@@ -3,25 +3,24 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using Domain;
 using MediatR;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic;
 using Persistence;
+
+
+
 namespace Application.Borrower
 {
     public class Create
     {
         public class Command : IRequest
         {
-
+            public string file { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
         {
             private readonly DatabaseContext _context;
             private readonly ILogger<Create> _logger;
-
-            // private List<EntityEntry> _obj = new List<EntityEntry>();
 
             public Handler(DatabaseContext context, ILogger<Create> logger)
             {
@@ -33,8 +32,8 @@ namespace Application.Borrower
                 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                 };
-
-                using (var reader = new StreamReader(@"C:\Users\IMehta\Downloads\Loan_data.csv"))
+                using (var fileStream = new FileStream(request.file, FileMode.Open))
+                using (var reader = new StreamReader(fileStream))
                 using (var csv = new CsvReader(reader, configuration))
                 {
                     /*
@@ -84,8 +83,10 @@ namespace Application.Borrower
                                     LoanTerm = data[i].LoanTerm,
                                     LoanType = data[i].LoanType,
                                     PaymentFreq = data[i].PaymentFreq,
-                                    PrimaryContact = data[i].PrimaryContact,
+                                    NoteDate = data[i].NoteDate,
+                                    LoanBoardingDate = data[i].LoanBoardingDate,
                                     BorrowerId = borrowerDetails.BorrowerId,
+                                    PriorServicerLoanId = data[i].PriorServicerLoanId,
 
                                 });
                                 count += 1;
@@ -95,14 +96,14 @@ namespace Application.Borrower
                     _context.AddRange(loanInformation);
                     _context.SaveChanges();
                     obj = _context.ChangeTracker.Entries().ToArray();
-                    
-                 // _logger.LogInformation("values of obj \n \n \n "+obj[count]+"\n\n\n");
+
+                    // _logger.LogInformation("values of obj \n \n \n "+obj[count]+"\n\n\n");
                     var loanDetails = new List<LoanDetails> { };
-                    //count = 0; // Re set the value of count so that we can use it again
+                    count = obj.Length - 1; // Re set the value of count so that we can use it again
 
                     for (var i = 0; i < data.Length; i++)
                     {
-                       //var infos= loanInformation.ToArray();
+                        //var infos= loanInformation.ToArray();
 
                         if (obj[count].Entity is LoanInformation loanInfo)
                         {
@@ -117,24 +118,17 @@ namespace Application.Borrower
                                     PropertyAddress = data[i].PropertyAddress,
                                     LoanInformationId = loanInfo.LoanInformationId,
                                 });
-                                 count+=1; 
+                                count -= 1;
                             }
-                            
                         }
-                      
                     }
-                  
-
-
                     _context.AddRange(loanDetails);
                     _context.SaveChanges();
-
                 }
                 return Task.FromResult(Unit.Value);
             }
         }
     }
-
     class BorrowerTypes
 
     {
@@ -146,7 +140,7 @@ namespace Application.Borrower
         public string Email { get; set; }
         public string Occupation { get; set; }
         //Loan Details Table
-      
+
         public decimal PIPmtAmt { get; set; }
         public decimal UPBAmt { get; set; }
         public decimal RemainingPayments { get; set; }
@@ -175,7 +169,7 @@ namespace Application.Borrower
 
 
         public string PaymentFreq { get; set; }
-
-        public string PrimaryContact { get; set; }
+        // public 
+        // public string PrimaryContact { get; set; }
     }
 }
