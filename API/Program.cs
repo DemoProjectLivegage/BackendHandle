@@ -2,13 +2,16 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using static  FluentValidation.DependencyInjectionExtensions;
 
 using Spire.Xls;
 // using  Microsoft.Extensions.Configuration.IConfiguration;
 using Domain;
-
+using FluentValidation.AspNetCore;
+using Application;
 using MediatR;
 using Application.Borrower;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +27,17 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 });
 //builder.Services.AddScoped<ICSVService , CSVService>();
 builder.Services.AddMediatR(typeof(List.Handler));
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<BorrowerTypes>();
+builder.Services.AddCors(opt=>{
+
+    opt.AddPolicy("CorsPolicy",ploicy=>{
+
+        ploicy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+
+    });
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,7 +52,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors("CorsPolicy");
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 

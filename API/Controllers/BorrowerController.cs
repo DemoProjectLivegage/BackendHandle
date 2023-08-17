@@ -16,7 +16,10 @@ namespace API.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateActivity()
+        {   if (!ModelState.IsValid)
         {
+            return BadRequest(ModelState);
+        }
             var fileData = Request.Form.Files[0];
             // var stream = new FileStream();
             FileStream stream = null;

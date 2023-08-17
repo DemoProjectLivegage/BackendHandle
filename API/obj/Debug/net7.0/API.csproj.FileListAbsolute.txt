@@ -296,3 +296,6 @@ C:\Users\IMehta\Desktop\BackendHandle\API\obj\Debug\net7.0\refint\API.dll
 C:\Users\IMehta\Desktop\BackendHandle\API\obj\Debug\net7.0\API.pdb
 C:\Users\IMehta\Desktop\BackendHandle\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\IMehta\Desktop\BackendHandle\API\obj\Debug\net7.0\ref\API.dll
+C:\Users\IMehta\Desktop\BackendHandle\API\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\IMehta\Desktop\BackendHandle\API\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+C:\Users\IMehta\Desktop\BackendHandle\API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
