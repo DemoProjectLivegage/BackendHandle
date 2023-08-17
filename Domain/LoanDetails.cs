@@ -11,15 +11,20 @@ namespace Domain
     { 
        [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LoanId {get;set;}
-
+      
+      [Required]
         public required decimal PIPmtAmt {get; set;}
 
+       [Required]
         public required decimal UPBAmt {get; set;}
 
-        public required decimal RemainingPayments {get; set;}
+        [Required]
+        public required int RemainingPayments {get; set;}
 
+       [Required]
         public required DateOnly PmtDueDate {get; set;}
 
+        [Required]
         public required string PropertyAddress {get; set;}
         
 

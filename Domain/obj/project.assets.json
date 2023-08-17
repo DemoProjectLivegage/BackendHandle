@@ -707,24 +707,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
+    "C:\\Users\\IMehta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "d:\\Demo\\BackendHandle\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

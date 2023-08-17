@@ -17,19 +17,23 @@ public class BorrowerDetails
    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
    public int BorrowerId { set; get; }
 
+  [Required]
    public string FullName { set; get; }
 
-   [DataType(DataType.PhoneNumber)]
+     
+    [Required]   [DataType(DataType.PhoneNumber)]
    public string ContactNumber { set; get; }
 
+  [Required] 
    public string MailingAddress { set; get; }
 
-   //  [DataType(DataType.PostalCode)]
+   [Required] [DataType(DataType.PostalCode)]
    public int Zipcode { get; set; }
 
-   // [DataType(DataType.EmailAddress)]
+   [Required] [DataType(DataType.EmailAddress)]
    public string Email { get; set; }
 
+  [Required]
    public string Occupation { get; set; }
 
 }

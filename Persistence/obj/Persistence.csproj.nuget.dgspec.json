@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {}
+    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,30 +69,32 @@
         }
       }
     },
-    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\BackendHandle\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
+              "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }

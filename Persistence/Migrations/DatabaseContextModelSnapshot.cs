@@ -26,18 +26,23 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ContactNumber")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("MailingAddress")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Occupation")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Zipcode")
@@ -64,10 +69,11 @@ namespace Persistence.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("PropertyAddress")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal>("RemainingPayments")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<int>("RemainingPayments")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("UPBAmt")
                         .HasColumnType("decimal(65,30)");
@@ -96,6 +102,7 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoanType")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateOnly>("NoteDate")
@@ -105,6 +112,7 @@ namespace Persistence.Migrations
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("PaymentFreq")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("PrimaryContact")
