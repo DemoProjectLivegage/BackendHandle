@@ -8,14 +8,16 @@ namespace API.Controllers
 {
     public class BorrowerController : BaseAPIController
     {
-        [HttpGet] //api/activities
-        public async Task<ActionResult<List<BorrowerDetails>>> GetActivities()
+        [HttpGet] //api/borrower
+        public async Task<ActionResult<List<BorrowerDetails>>> GetBorrowers()
         {
             return await Mediator.Send(new List.Query());
         }
 
+
+    
         [HttpPost]
-        public async Task<IActionResult> CreateActivity()
+        public async Task<IActionResult> CreateBorrower()
         {   if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
@@ -36,12 +38,12 @@ namespace API.Controllers
             return Ok(await Mediator.Send(new Create.Command { file = tempFilePath }));
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<BorrowerDetails>> GetBorrowers(int Id)
+        // [HttpGet("{id}")]
+        // public async Task<ActionResult<BorrowerDetails>> GetBorrowers(int Id)
 
-        {
-            return await Mediator.Send(new Details.Query { BorrowerId = Id });
-        }
+        // {
+        //     return await Mediator.Send(new Details.Query { BorrowerId = Id });
+        // }
 
         [HttpGet("{id}")]
 
@@ -50,7 +52,7 @@ namespace API.Controllers
             return await Mediator.Send(new Loandetail.Query{LoanInformationId=id});
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("loaninfo/{id}")]
          public async Task<ActionResult<LoanInformation>> GetLoanInfo(int Id)
          {
             return await Mediator.Send(new Loaninfodetail.Query{BorrowerId=Id});
