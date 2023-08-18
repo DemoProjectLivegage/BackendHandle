@@ -9,7 +9,7 @@ namespace API.Controllers
     public class BorrowerController : BaseAPIController
     {
         [HttpGet] //api/borrower
-        public async Task<ActionResult<List<BorrowerDetails>>> GetBorrowers()
+        public async Task<ActionResult<List<BorrowerDetailsWithLoanInfo>>> GetBorrowers()
         {
             return await Mediator.Send(new List.Query());
         }
