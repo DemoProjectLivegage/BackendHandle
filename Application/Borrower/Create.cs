@@ -1,18 +1,16 @@
-            using System.ComponentModel.DataAnnotations;
-            using System.Globalization;
-            using System.Linq.Expressions;
-            using CsvHelper;
-            using CsvHelper.Configuration;
-            using Domain;
-            using FluentValidation;
-            using MediatR;
-            using Microsoft.Extensions.Logging;
-            using Persistence;
+using System.Globalization;
+using CsvHelper;
+using CsvHelper.Configuration;
+using Domain;
+using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Persistence;
 
 
-            namespace Application.Borrower
-            {
-                public class Create
+namespace Application.Borrower
+{
+    public class Create
                 {
                     public class Command : IRequest
                     {
@@ -25,7 +23,7 @@
                 public CommandValidtor()
                 {  //validations for BorrowersDetails Table
                     RuleFor(x=>x.FullName).NotEmpty();
-                    RuleFor(x=>x.ContactNumber).NotEmpty().Length(11).WithMessage("Phone number must be 12 digits ");
+                    RuleFor(x=>x.ContactNumber).NotEmpty().Length(10).WithMessage("Phone number must be 10 digits ");
                     RuleFor(x=>x.MailingAddress).NotEmpty();
                     RuleFor(x=>x.Zipcode).NotEmpty();
                     RuleFor(x=>x.Email).NotEmpty().EmailAddress();
