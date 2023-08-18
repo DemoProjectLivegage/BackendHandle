@@ -1,4 +1,5 @@
 using System.Globalization;
+using Application.DataStructures;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Domain;
@@ -18,20 +19,20 @@ namespace Application.Borrower
                     }
 
                     //Validation Function 
-                public class CommandValidtor : AbstractValidator<BorrowerTypes>
+                public class CommandValidtor : AbstractValidator<LoanTypes>
                 {
                 public CommandValidtor()
                 {  //validations for BorrowersDetails Table
                     RuleFor(x=>x.FullName).NotEmpty();
-                    RuleFor(x=>x.ContactNumber).NotEmpty().Length(10).WithMessage("Phone number must be 10 digits ");
+                    RuleFor(x=>x.ContactNumber).NotEmpty().Length(11).WithMessage("Phone number must be 10 digits ");
                     RuleFor(x=>x.MailingAddress).NotEmpty();
                     RuleFor(x=>x.Zipcode).NotEmpty();
                     RuleFor(x=>x.Email).NotEmpty().EmailAddress();
                     RuleFor(x=>x.Occupation).NotEmpty();
                     
                     //validations for LoanDetails Table
-                    RuleFor(x=>x.PIPmtAmt).NotEmpty().PrecisionScale(6,2,true);
-                    RuleFor(x=>x.UPBAmt).NotEmpty().PrecisionScale(7,2,true);
+                    RuleFor(x=>x.PIPmtAmt).NotEmpty().PrecisionScale(9,3,true);
+                    RuleFor(x=>x.UPBAmt).NotEmpty().PrecisionScale(9,3,true);
                     RuleFor(x=>x.RemainingPayments).NotEmpty();
                     RuleFor(x=>x.PmtDueDate).NotEmpty();
                   
@@ -44,8 +45,8 @@ namespace Application.Borrower
                     RuleFor(x=>x.LoanBoardingDate).NotEmpty();
                     RuleFor(x=>x.NoteRatePercent).NotEmpty();
                     RuleFor(x=>x.Escrow);
-                    RuleFor(x=>x.TaxInsurancePmtAmt).PrecisionScale(5,2,true);
-                    RuleFor(x=>x.TotalLoanAmount).NotEmpty().PrecisionScale(6,2,true);
+                    RuleFor(x=>x.TaxInsurancePmtAmt).PrecisionScale(9,2,true);
+                    RuleFor(x=>x.TotalLoanAmount).NotEmpty().PrecisionScale(9,2,true);
                     RuleFor(x=>x.LoanTerm).NotEmpty();
                     RuleFor(x=>x.LoanType).NotEmpty();
                     
@@ -79,7 +80,7 @@ namespace Application.Borrower
                                 * pointer and make the object unusable.
                                 */
                             // try
-                            var borrowerRecords = csv.GetRecords<BorrowerTypes>();
+                            var borrowerRecords = csv.GetRecords<LoanTypes>();
                                 var borrowers = new List<BorrowerDetails> { };
                                 var data = borrowerRecords.ToArray();
 
@@ -142,8 +143,7 @@ namespace Application.Borrower
                                                 LoanBoardingDate = data[i].LoanBoardingDate,
                                                 BorrowerId = borrowerDetails.BorrowerId,
                                                 PriorServicerLoanId = data[i].PriorServicerLoanId,
-                                                  PropertyAddress = data[i].PropertyAddress,
-
+                                               PropertyAddress=data[i].PropertyAddress
                                             });
                                             count += 1;
                                         }
@@ -185,52 +185,11 @@ namespace Application.Borrower
                                         _context.AddRange(loanDetails);
                                         _context.SaveChanges();
 
-                                
-                            // } catch(Exception e)
-                            // {
-                            //     Console.WriteLine("\n\n\n\n Errorrr check the daata \n\n\n", e);
-
-                            //     }
                                 return Task.FromResult(Unit.Value);
                             }
                         
                         }
                     }
                 }
-            public class BorrowerTypes
-
-                {
-                    //Borrower Details Table
-                
-                    public string FullName { set; get; }
-                    public string ContactNumber { set; get; }
-                    public string MailingAddress { set; get; }
-                    public int Zipcode { get; set; }
-                    public string Email { get; set; }
-                    public string Occupation { get; set; }
-
-
-                    //Loan Details Table
-                    public decimal PIPmtAmt { get; set; }
-                    public decimal UPBAmt { get; set; }
-                    public int RemainingPayments { get; set; }
-                    public DateOnly PmtDueDate { get; set; }
-                    public required string PropertyAddress { get; set; }
-
-
-                    //Loan Information Table
-
-                    public int PriorServicerLoanId { get; set; }
-                    public DateOnly NoteDate { get; set; }  
-                    public DateOnly LoanBoardingDate { get; set; }
-                    public decimal NoteRatePercent { get; set; }
-                    public bool Escrow { get; set; }
-                    public decimal TaxInsurancePmtAmt { get; set; }
-                    public decimal TotalLoanAmount { get; set; }
-                    public int LoanTerm { get; set; }
-                    public string LoanType { get; set; }
-                    public string PaymentFreq { get; set; }
-                    // public 
-                    // public string PrimaryContact { get; set; }
-                }
+           
             }

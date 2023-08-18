@@ -18,10 +18,6 @@ namespace Domain
 
         public required DateOnly PmtDueDate {get; set;}
 
-       
-       
-        
-
        public int LoanInformationId {get; set;}
     //   public int LoanInformationId {get; set;}
     }

@@ -20,20 +20,17 @@ public class BorrowerDetails
   [Required]
    public string FullName { set; get; }
 
-     
-    [Required]   [DataType(DataType.PhoneNumber)]
    public string ContactNumber { set; get; }
 
-  [Required] 
    public string MailingAddress { set; get; }
 
-   [Required] [DataType(DataType.PostalCode)]
    public int Zipcode { get; set; }
 
-   [Required] [DataType(DataType.EmailAddress)]
+
    public string Email { get; set; }
 
-  [Required]
    public string Occupation { get; set; }
+
+ 
 
 }

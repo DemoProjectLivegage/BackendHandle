@@ -68,10 +68,6 @@ namespace Persistence.Migrations
                     b.Property<DateOnly>("PmtDueDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("PropertyAddress")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<int>("RemainingPayments")
                         .HasColumnType("int");
 
@@ -115,11 +111,11 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("PrimaryContact")
-                        .HasColumnType("longtext");
-
                     b.Property<int>("PriorServicerLoanId")
                         .HasColumnType("int");
+
+                    b.Property<string>("PropertyAddress")
+                        .HasColumnType("longtext");
 
                     b.Property<decimal>("TaxInsurancePmtAmt")
                         .HasColumnType("decimal(65,30)");
