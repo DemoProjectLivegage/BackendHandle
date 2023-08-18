@@ -48,10 +48,10 @@ namespace Domain
 [Required]
     public string LoanType { get; set; }
 
-    [Required]    [EnumDataType(typeof(Frequency))]
+    [Required]   
     public string PaymentFreq { get; set; }
 
-    public string PrimaryContact { get; set; }
+     public required string PropertyAddress {get; set;}
 
     // [ForeignKey("BorrowerDetails.BorrowerId")]
     public int BorrowerId { get; set; }

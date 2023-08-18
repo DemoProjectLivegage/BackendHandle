@@ -34,11 +34,11 @@ namespace Application.Borrower
                     RuleFor(x=>x.UPBAmt).NotEmpty().PrecisionScale(7,2,true);
                     RuleFor(x=>x.RemainingPayments).NotEmpty();
                     RuleFor(x=>x.PmtDueDate).NotEmpty();
-                    RuleFor(x=>x.PropertyAddress).NotEmpty();
+                  
 
 
                     //validations for LoanInformation Table
-
+                      RuleFor(x=>x.PropertyAddress).NotEmpty();
                     RuleFor(x=>x.PriorServicerLoanId).NotEmpty();
                     RuleFor(x=>x.NoteDate).NotEmpty();
                     RuleFor(x=>x.LoanBoardingDate).NotEmpty();
@@ -142,6 +142,7 @@ namespace Application.Borrower
                                                 LoanBoardingDate = data[i].LoanBoardingDate,
                                                 BorrowerId = borrowerDetails.BorrowerId,
                                                 PriorServicerLoanId = data[i].PriorServicerLoanId,
+                                                  PropertyAddress = data[i].PropertyAddress,
 
                                             });
                                             count += 1;
@@ -174,7 +175,6 @@ namespace Application.Borrower
                                                         UPBAmt = data[i].UPBAmt,
                                                         RemainingPayments = data[i].RemainingPayments,
                                                         PmtDueDate = data[i].PmtDueDate,
-                                                        PropertyAddress = data[i].PropertyAddress,
                                                         LoanInformationId = loanInfo.LoanInformationId,
                                                     });
                                                     count -= 1;
