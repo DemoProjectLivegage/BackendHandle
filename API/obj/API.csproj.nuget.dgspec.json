@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj": {}
+    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj": {
+    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj",
+        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\API\\obj\\",
+        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj"
+              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj": {
+                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj"
               }
             }
           }
@@ -99,21 +98,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj": {
+    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj",
+        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\obj\\",
+        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,11 +126,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
+              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -179,21 +178,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -244,21 +243,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\obj\\",
+        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -272,8 +271,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }
@@ -317,7 +316,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

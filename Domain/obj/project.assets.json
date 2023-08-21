@@ -707,19 +707,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IMehta\\.nuget\\packages\\": {}
+    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -770,7 +770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
