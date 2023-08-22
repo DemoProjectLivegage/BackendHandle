@@ -62,7 +62,7 @@ namespace Application.Borrower
                 _context = context;
                 _logger = logger;
             }
-            public Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
@@ -188,12 +188,98 @@ namespace Application.Borrower
                     _context.AddRange(loanDetails);
                     _context.SaveChanges();
 
+
     
-                    return Task.FromResult(Unit.Value);
+                    // return Task.FromResult(Unit.Value);
+
+
+                    var db = from information in _context.LoanInformation
+                             join loan in _context.LoanDetails
+                             on information.LoanInformationId equals loan.LoanInformationId
+                             select new Payment_Schedule
+                             {
+                                 Tax_Amount = information.TaxInsurancePmtAmt,
+                                 Insurance_Amount = information.TaxInsurancePmtAmt,
+                                 Due_Date = loan.PmtDueDate,
+                                 UPB_Amount = loan.UPBAmt,
+                                 TotalLoanAmount = information.TotalLoanAmount,
+                                 Note_Interest_Rate = information.NoteRatePercent,
+                                 Tenure = information.LoanTerm,
+                                 Frequency = information.PaymentFreq,
+                                 Loan_Id = loan.LoanId,
+                                 Escrow = information.Escrow
+                             };
+
+                    var paymentList = new List<Payment_Schedule>();
+                    // var escrowBeneficiaryList = new List<Escrow_Beneficiary>();
+                    var escrowList = new List<Escrow_Disbursement_Schedule>();
+
+                    foreach (var item in db)
+                    {
+                        int n = 12;
+                        if (item.Frequency.Equals("Weekly")) n = 52;
+                        else if (item.Frequency.Equals("BiWeekly")) n = 26;
+
+                        decimal r = item.Note_Interest_Rate / n / 100;
+                        decimal P = item.TotalLoanAmount * r;
+                        decimal num = 1 + r;
+                        decimal t = item.Tenure * n;
+                        decimal f = (decimal)Math.Pow((double)num, (double)t);
+                        decimal d = f - 1;
+                        decimal UPB_Amount = item.UPB_Amount;
+
+                        for (int i = 0; i < 12; i++)
+                        {
+                            var payment = addPayment(P, f, d, UPB_Amount, r, item.Due_Date, i);
+                            payment.Loan_Id = item.Loan_Id;
+                            payment.Frequency = item.Frequency;
+                            payment.Tenure = item.Tenure;
+                            payment.TotalLoanAmount = item.TotalLoanAmount;
+                            payment.Note_Interest_Rate = item.Note_Interest_Rate;
+
+                            decimal Property_Tax = (decimal)1.2 * item.TotalLoanAmount / 100;
+                            decimal Home_Insurance = 1500;
+                            decimal PMI = (decimal)0.5 * item.TotalLoanAmount / 100;
+                            decimal HOA = (decimal)0.5 * item.TotalLoanAmount / 100;
+                            decimal flood_Insurance = 739 / n;
+
+                            payment.Tax_Amount = Property_Tax / 12;
+                            payment.Insurance_Amount = (Home_Insurance + PMI + HOA + flood_Insurance) / 12;
+
+                            if(!item.Escrow) {
+                                payment.Tax_Amount = 0;
+                                payment.Insurance_Amount = 0;
+                            }
+                            
+                            paymentList.Add(payment);
+
+                            // var escrowDisbursementSchedule = new Escrow_Disbursement_Schedule();
+                            // escrowDisbursementSchedule.date = item.Due_Date.AddMonths(i+1);
+                            // escrowDisbursementSchedule.Disbursement_Frequency = 
+                            // escrowDisbursementSchedule.Incoming_Escrow = payment.Tax_Amount + payment.Insurance_Amount;
+                            UPB_Amount = payment.UPB_Amount;
+                        }
+                    }
+
+                    await _context.AddRangeAsync(paymentList);
+                    await _context.SaveChangesAsync();
+
+                    return await Task.FromResult(Unit.Value);
+
                 }
 
             }
+            public Payment_Schedule addPayment(decimal p, decimal f, decimal d, decimal UPB, decimal r, DateOnly date, int num)
+            {
+                var item = new Payment_Schedule();
+                item.Monthly_Payment_Amount = p * f / d;
+                item.Interest_Amount = UPB * r;
+                item.Principal_Amount = item.Monthly_Payment_Amount - item.Interest_Amount;
+                item.UPB_Amount = UPB - item.Principal_Amount;
+                item.Due_Date = date.AddMonths(num + 1);
+
+                return item;
+            }
         }
     }
-
 }

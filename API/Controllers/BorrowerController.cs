@@ -42,6 +42,9 @@ namespace API.Controllers
                 Console.WriteLine("\n\nError"+e.Message+"\n\n");
                 return BadRequest("Error");
             }
+            // int id = 1;
+            // Payment_Schedule payment_Schedule;
+            // await Mediator.Send(new Payment_Schedule_Service.Command(Loan_Id, payment_Schedule));
             return Ok(await Mediator.Send(new Create.Command { file = tempFilePath }));
         }
 
