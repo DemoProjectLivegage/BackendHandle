@@ -43,5 +43,10 @@ namespace Domain
         public int Tenure {get; set;}
 
         public string Frequency {get; set;}
+
+        public static implicit operator List<object>(Payment_Schedule v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -207,7 +207,7 @@ namespace Application.Borrower
                                  Note_Interest_Rate = information.NoteRatePercent,
                                  Tenure = information.LoanTerm,
                                  Frequency = information.PaymentFreq,
-                                 Loan_Id = information.BorrowerId
+                                 Loan_Id = loan.LoanId
                              };
 
                     var paymentList = new List<Payment_Schedule>();
