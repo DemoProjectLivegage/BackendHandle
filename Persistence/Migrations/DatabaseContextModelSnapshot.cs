@@ -19,6 +19,35 @@ namespace Persistence.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Domain.Benificiary", b =>
+                {
+                    b.Property<int>("benificiary_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("account_no")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("escrow_type")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("frequency")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("payment_mode")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("routing_no")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("benificiary_id");
+
+                    b.ToTable("Benificiary");
+                });
+
             modelBuilder.Entity("Domain.BorrowerDetails", b =>
                 {
                     b.Property<int>("BorrowerId")
@@ -26,11 +55,9 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ContactNumber")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("FullName")
@@ -38,11 +65,9 @@ namespace Persistence.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("MailingAddress")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Occupation")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Zipcode")
@@ -98,7 +123,6 @@ namespace Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoanType")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateOnly>("NoteDate")
@@ -108,7 +132,6 @@ namespace Persistence.Migrations
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("PaymentFreq")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("PriorServicerLoanId")
@@ -126,6 +149,53 @@ namespace Persistence.Migrations
                     b.HasKey("LoanInformationId");
 
                     b.ToTable("LoanInformation");
+                });
+
+            modelBuilder.Entity("Domain.PaymentSchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("Due_Date")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Frequency")
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Insurance_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("Interest_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<int>("Loan_Id")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Monthly_Payment_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("Note_Interest_Rate")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("Principal_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("Tax_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<int>("Tenure")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalLoanAmount")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("UPB_Amount")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentSchedule");
                 });
 #pragma warning restore 612, 618
         }

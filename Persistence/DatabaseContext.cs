@@ -12,6 +12,10 @@ namespace Persistence
         public DbSet<BorrowerDetails> BorrowersDetails { set; get; }
         public DbSet<LoanInformation> LoanInformation { get; set; }
         public DbSet<LoanDetails> LoanDetails { set; get; }
+        public DbSet<PaymentSchedule> PaymentSchedule { set; get; }
+        
+        public DbSet<Benificiary> Benificiary { set; get; }
+        // public object Activities { get; set; }
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
         //     modelBuilder.Entity<LoanInformation>()

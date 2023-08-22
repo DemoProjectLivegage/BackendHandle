@@ -188,6 +188,7 @@ namespace Application.Borrower
                     _context.AddRange(loanDetails);
                     _context.SaveChanges();
 
+    
                     return Task.FromResult(Unit.Value);
                 }
 

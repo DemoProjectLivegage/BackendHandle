@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj": {}
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj": {}
   },
   "projects": {
-    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Application\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
-                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -80,21 +80,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -145,21 +145,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,8 +173,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "c:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }
@@ -218,7 +218,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }
