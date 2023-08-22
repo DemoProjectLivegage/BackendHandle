@@ -34,6 +34,7 @@ C:\Users\IMehta\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\IMehta\Desktop\BackendHandle\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\IMehta\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\IMehta\Desktop\BackendHandle\Domain\obj\Debug\net7.0\ref\Domain.dll
+<<<<<<< HEAD
 C:\Users\AKewat\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.deps.json
 C:\Users\AKewat\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.dll
 C:\Users\AKewat\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.pdb
@@ -46,3 +47,17 @@ C:\Users\AKewat\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\AKewat\Desktop\BackendHandle\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\AKewat\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\AKewat\Desktop\BackendHandle\Domain\obj\Debug\net7.0\ref\Domain.dll
+=======
+C:\Users\VSingh\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\VSingh\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\VSingh\Desktop\BackendHandle\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\VSingh\Desktop\BackendHandle\Domain\obj\Debug\net7.0\ref\Domain.dll
+>>>>>>> 8c48fa4dd433526c454228471629159e8e0be6b5

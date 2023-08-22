@@ -128,9 +128,6 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("BorrowerId")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("Due_Date")
                         .HasColumnType("date");
 
@@ -142,6 +139,9 @@ namespace Persistence.Migrations
 
                     b.Property<decimal>("Interest_Amount")
                         .HasColumnType("decimal(8,2)");
+
+                    b.Property<int>("Loan_Id")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Monthly_Payment_Amount")
                         .HasColumnType("decimal(8,2)");
