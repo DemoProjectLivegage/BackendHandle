@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj": {}
+    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj": {
+    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
+        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj",
         "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\obj\\",
+        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"

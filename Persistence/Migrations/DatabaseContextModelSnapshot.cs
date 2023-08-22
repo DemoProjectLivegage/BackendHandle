@@ -131,6 +131,9 @@ namespace Persistence.Migrations
                     b.Property<DateOnly>("Due_Date")
                         .HasColumnType("date");
 
+                    b.Property<bool>("Escrow")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Frequency")
                         .HasColumnType("longtext");
 

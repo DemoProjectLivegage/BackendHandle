@@ -207,7 +207,8 @@ namespace Application.Borrower
                                  Note_Interest_Rate = information.NoteRatePercent,
                                  Tenure = information.LoanTerm,
                                  Frequency = information.PaymentFreq,
-                                 Loan_Id = loan.LoanId
+                                 Loan_Id = loan.LoanId,
+                                 Escrow = information.Escrow
                              };
 
                     var paymentList = new List<Payment_Schedule>();
@@ -245,6 +246,12 @@ namespace Application.Borrower
 
                             payment.Tax_Amount = Property_Tax / 12;
                             payment.Insurance_Amount = (Home_Insurance + PMI + HOA + flood_Insurance) / 12;
+
+                            if(!item.Escrow) {
+                                payment.Tax_Amount = 0;
+                                payment.Insurance_Amount = 0;
+                            }
+                            
                             paymentList.Add(payment);
 
                             // var escrowDisbursementSchedule = new Escrow_Disbursement_Schedule();
