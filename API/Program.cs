@@ -24,6 +24,7 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 builder.Services.AddMediatR(typeof(List.Handler));
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<LoanTypes>();
+
 builder.Services.AddCors(opt=>{
 
     opt.AddPolicy("CorsPolicy",ploicy=>{

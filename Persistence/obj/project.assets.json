@@ -3312,34 +3312,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IMehta\\.nuget\\packages\\": {}
+    "C:\\Users\\AKewat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
-      "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\obj\\",
+      "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+      "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+            "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
             }
           }
         }
