@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
-using CsvHelper;
+
 
 namespace Domain
 {
@@ -24,6 +24,6 @@ namespace Domain
 
         public string Payment_Mode {get; set;}
 
-        public Disbursement_Frequency Frequency {get; set;}
+        public string  Frequency {get; set;}
     }
 }
