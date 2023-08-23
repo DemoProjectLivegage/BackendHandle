@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using Application.DataStructures;
 using CsvHelper;
@@ -6,11 +5,7 @@ using CsvHelper.Configuration;
 using Domain;
 using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Authentication.OAuth.Claims;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic;
 using Persistence;
 
 
@@ -194,6 +189,10 @@ namespace Application.Borrower
                     _context.SaveChanges();
 
 
+    
+                    // return Task.FromResult(Unit.Value);
+
+
                     var db = from information in _context.LoanInformation
                              join loan in _context.LoanDetails
                              on information.LoanInformationId equals loan.LoanInformationId
@@ -266,6 +265,7 @@ namespace Application.Borrower
                     await _context.SaveChangesAsync();
 
                     return await Task.FromResult(Unit.Value);
+
                 }
 
             }
@@ -282,5 +282,4 @@ namespace Application.Borrower
             }
         }
     }
-
 }

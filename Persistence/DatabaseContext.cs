@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistence
 {
@@ -13,7 +13,13 @@ namespace Persistence
         public DbSet<LoanInformation> LoanInformation { get; set; }
         public DbSet<LoanDetails> LoanDetails { set; get; }
 
+        // public DbSet<PaymentSchedule> PaymentSchedule { set; get; }
+        
+        public DbSet<Benificiary> Benificiary { set; get; }
+        // public object Activities { get; set; }
+
         public DbSet<Payment_Schedule> Payment_Schedule {set; get;}
+
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
         //     modelBuilder.Entity<LoanInformation>()

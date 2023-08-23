@@ -7,6 +7,7 @@ using MediatR;
 using Application.Borrower;
 using FluentValidation;
 using Application.DataStructures;
+using Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 builder.Services.AddMediatR(typeof(List.Handler));
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<LoanTypes>();
+builder.Services.AddValidatorsFromAssemblyContaining<Benificiary>();
 
 builder.Services.AddCors(opt=>{
 

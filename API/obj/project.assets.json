@@ -4511,11 +4511,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj",
+      "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj",
+      "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
       "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\obj\\",
+      "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4608,5 +4608,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
