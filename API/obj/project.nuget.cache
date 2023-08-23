@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NhlQphTIHqHfyCsOanHyRirJxlwjqw41ivB0MscQcGTBGqZSqH+WHc9GAi4ulKuMI6Den5y2V0qvxRgHSaeS1w==",
+  "dgSpecHash": "agobE767+tvuFXD8jBomawLjeba8s17NV8jbTPhRosEyqVI2OSfC7cbMC1BHZhXDGwtZl9F2yNjmcImQ6cNWhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AKewat\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\AKewat\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

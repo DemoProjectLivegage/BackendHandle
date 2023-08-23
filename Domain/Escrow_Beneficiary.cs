@@ -22,7 +22,7 @@ namespace Domain
 
         public string Routing_Number {get; set;}
 
-        public Beneficiary_Payment_Mode Payment_Mode {get; set;}
+        public string Payment_Mode {get; set;}
 
         public Disbursement_Frequency Frequency {get; set;}
     }
