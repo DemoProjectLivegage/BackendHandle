@@ -10,7 +10,7 @@ namespace Application.Escrow_schedule
     {
         public class Command : IRequest
         {
-            public Benificiary benificiary { get; set; }
+            public List<Benificiary> benificiary { get; set; }
         }
 
         public class CommandValidtor : AbstractValidator<Benificiary>
@@ -37,7 +37,7 @@ namespace Application.Escrow_schedule
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 
-                await _context.Benificiary.AddAsync(request.benificiary);
+                await _context.Benificiary.AddRangeAsync(request.benificiary);
                 await _context.SaveChangesAsync();   
                 return Unit.Value;
             }

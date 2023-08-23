@@ -36,7 +36,9 @@ namespace Application.PaymentScheduleService
                                     Insurance_Amount = schedule.Insurance_Amount,
                                     Due_Date = schedule.Due_Date,
                                     UPB_Amount = schedule.UPB_Amount,
-                                    Loan_Id = schedule.Loan_Id
+                                    Loan_Id = schedule.Loan_Id,
+                                    TotalLoanAmount=schedule.TotalLoanAmount,
+                                    Note_Interest_Rate=schedule.Note_Interest_Rate
                                 };
 
                 List<Payment_Schedule> payments = new List<Payment_Schedule>();
