@@ -584,3 +584,5 @@ C:\Users\RASharma\Desktop\training\Projects\BackendHandle\API\obj\Debug\net7.0\A
 C:\Users\RASharma\Desktop\training\Projects\BackendHandle\API\obj\Debug\net7.0\ref\API.dll
 >>>>>>> 8c48fa4dd433526c454228471629159e8e0be6b5
 >>>>>>> 363fbb998c9bc0c9d60c2cd959d477bba97cf2b0
+C:\Users\RASharma\Desktop\training\Projects\BackendHandle\API\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\RASharma\Desktop\training\Projects\BackendHandle\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
