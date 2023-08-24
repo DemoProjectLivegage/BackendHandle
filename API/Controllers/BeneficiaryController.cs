@@ -20,6 +20,9 @@ namespace API.Controllers
             
             return Ok(await Mediator.Send(new Escrow_Benificiary.Command { benificiary =   benificiary}));
          }
-
+        [HttpGet("{id}")]
+        public async Task<List<Benificiary>> GetBenificiaryByLoanId(int id) {
+            return await Mediator.Send(new GetBeneficiaryByLoanId.Query{Id = id});
+        }
     }
 }
