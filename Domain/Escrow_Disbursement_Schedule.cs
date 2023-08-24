@@ -14,9 +14,13 @@ namespace Domain
 
         public decimal Escrow_Disbursement {get; set;}
 
+        public string Escrow_Name {get; set;}
+
         public string Disbursement_Frequency {get; set;}
 
         public decimal Escrow_Balance {get; set;}
+
+        [ForeignKey("{LoanInformationId}")]
         public int Loan_Id {get; set;}
     }
 }

@@ -198,8 +198,7 @@ namespace Application.Borrower
                              on information.LoanInformationId equals loan.LoanInformationId
                              select new Payment_Schedule
                              {
-                                 Tax_Amount = information.TaxInsurancePmtAmt,
-                                 Insurance_Amount = information.TaxInsurancePmtAmt,
+                                 Escrow_Amount = information.TaxInsurancePmtAmt,
                                  Due_Date = loan.PmtDueDate,
                                  UPB_Amount = loan.UPBAmt,
                                  TotalLoanAmount = information.TotalLoanAmount,
@@ -212,7 +211,7 @@ namespace Application.Borrower
 
                     var paymentList = new List<Payment_Schedule>();
                     // var escrowBeneficiaryList = new List<Escrow_Beneficiary>();
-                    var escrowList = new List<Escrow_Disbursement_Schedule>();
+                    // var escrowList = new List<Escrow_Disbursement_Schedule>();
 
                     foreach (var item in db)
                     {
@@ -236,19 +235,11 @@ namespace Application.Borrower
                             payment.Tenure = item.Tenure;
                             payment.TotalLoanAmount = item.TotalLoanAmount;
                             payment.Note_Interest_Rate = item.Note_Interest_Rate;
-
-                            decimal Property_Tax = (decimal)1.2 * item.TotalLoanAmount / 100;
-                            decimal Home_Insurance = 1500;
-                            decimal PMI = (decimal)0.5 * item.TotalLoanAmount / 100;
-                            decimal HOA = (decimal)0.5 * item.TotalLoanAmount / 100;
-                            decimal flood_Insurance = 739 / n;
-
-                            payment.Tax_Amount = Property_Tax / 12;
-                            payment.Insurance_Amount = (Home_Insurance + PMI + HOA + flood_Insurance) / 12;
+                            payment.Escrow = item.Escrow;
+                            payment.Escrow_Amount = item.Escrow_Amount;
 
                             if(!item.Escrow) {
-                                payment.Tax_Amount = 0;
-                                payment.Insurance_Amount = 0;
+                                payment.Escrow_Amount = 0;
                             }
                             
                             paymentList.Add(payment);

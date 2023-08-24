@@ -20,6 +20,8 @@ namespace Persistence
 
         public DbSet<Payment_Schedule> Payment_Schedule {set; get;}
 
+        public DbSet<Escrow_Disbursement_Schedule> Escrow_Disbursement {get; set;}
+
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
         //     modelBuilder.Entity<LoanInformation>()

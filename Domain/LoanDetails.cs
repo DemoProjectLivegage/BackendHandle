@@ -18,6 +18,7 @@ namespace Domain
 
         public required DateOnly PmtDueDate {get; set;}
 
+        [ForeignKey("{LoanInformation}")]
        public int LoanInformationId {get; set;}
     //   public int LoanInformationId {get; set;}
     }

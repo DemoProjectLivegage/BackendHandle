@@ -29,14 +29,13 @@ namespace Application.PaymentScheduleService
                                 on schedule.Loan_Id equals loan.LoanId
                                 select new Payment_Schedule {
                                     Id = schedule.Id,
-                                    Monthly_Payment_Amount = schedule.Monthly_Payment_Amount,
+                                    Loan_Id = schedule.Loan_Id,
+                                    Due_Date = schedule.Due_Date,
                                     Principal_Amount = schedule.Principal_Amount,
                                     Interest_Amount = schedule.Interest_Amount,
-                                    Tax_Amount = schedule.Tax_Amount,
-                                    Insurance_Amount = schedule.Insurance_Amount,
-                                    Due_Date = schedule.Due_Date,
+                                    Monthly_Payment_Amount = schedule.Monthly_Payment_Amount,
+                                    Escrow_Amount = schedule.Escrow_Amount,
                                     UPB_Amount = schedule.UPB_Amount,
-                                    Loan_Id = schedule.Loan_Id
                                 };
 
                 List<Payment_Schedule> payments = new List<Payment_Schedule>();

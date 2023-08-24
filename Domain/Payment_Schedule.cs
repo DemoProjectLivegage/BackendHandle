@@ -11,8 +11,7 @@ namespace Domain
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
-        public decimal Monthly_Payment_Amount {get; set;}
+        public DateOnly Due_Date {get; set;}
 
         [Column(TypeName = "decimal(8,2)")]
         public decimal Principal_Amount {get; set;}
@@ -20,13 +19,12 @@ namespace Domain
         [Column(TypeName = "decimal(8,2)")]
         public decimal Interest_Amount {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
-        public decimal Tax_Amount {get; set;}
 
         [Column(TypeName = "decimal(8,2)")]
-        public decimal Insurance_Amount {get; set;}
-
-        public DateOnly Due_Date {get; set;}
+        public decimal Escrow_Amount {get; set;}
+        
+        [Column(TypeName = "decimal(8,2)")]
+        public decimal Monthly_Payment_Amount {get; set;}
 
         [Column(TypeName = "decimal(8,2)")]
         public decimal UPB_Amount {get; set;}

@@ -7,13 +7,6 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-
-  public enum Frequency
-{
-    weekly,
-    biweekly,
-    monthly
-}
   public class LoanInformation
   {
     [Key]
