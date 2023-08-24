@@ -20,7 +20,7 @@ namespace Persistence
 
         public DbSet<Payment_Schedule> Payment_Schedule {set; get;}
 
-        public DbSet<Escrow_Disbursement_Schedule> Escrow_Disbursement {get; set;}
+        public DbSet<Escrow_Disbursement_Schedule> Escrow_Disbursement_Schedule {get; set;}
 
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {

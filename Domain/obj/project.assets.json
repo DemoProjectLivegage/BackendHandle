@@ -707,26 +707,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RASharma\\.nuget\\packages\\": {}
+    "C:\\Users\\AKewat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

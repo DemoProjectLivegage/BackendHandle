@@ -96,9 +96,9 @@ namespace Application.Escrow_schedule
                 Escrow_Disbursement_Schedule escPayment = new Escrow_Disbursement_Schedule();
 
                 escPayment.date = loan.PmtDueDate;
-                escPayment.Incoming_Escrow = monthlyPayment;
+                escPayment.escrow_payment_amount = monthlyPayment;
 
-                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement.OrderBy(x=>x.Escrow_Id).LastOrDefault(x => x.Loan_Id == loan.LoanId);
+                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement_Schedule.OrderBy(x=>x.id).LastOrDefault(x => x.Loan_Id == loan.LoanId);
                 decimal lastBalance = 0;
                 if(previousBalance != null) lastBalance = previousBalance.Escrow_Balance;
 
@@ -116,9 +116,9 @@ namespace Application.Escrow_schedule
                 escDisburse.Escrow_Name = beneficiary.name;
                 string frequency = beneficiary.frequency;
 
-                escDisburse.Escrow_Disbursement = beneficiaryDto.disbursementAmount;
+                escDisburse.escrow_disbursement = beneficiaryDto.disbursementAmount;
 
-                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement.OrderBy(x=>x.Escrow_Id).LastOrDefault(x => x.Loan_Id == loanId);
+                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement_Schedule.OrderBy(x=>x.id).LastOrDefault(x => x.Loan_Id == loanId);
                 decimal lastBalance = 0;
                 if(previousBalance != null) lastBalance = previousBalance.Escrow_Balance;
 

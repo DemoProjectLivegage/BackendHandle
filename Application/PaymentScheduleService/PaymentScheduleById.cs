@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
 using Domain;
 using MediatR;
 using Persistence;
@@ -24,8 +19,7 @@ namespace Application.PaymentScheduleService
 
             public Task<List<Payment_Schedule>> Handle(Query request, CancellationToken cancellationToken)
             {
-                 var result = from schedule in _context.Payment_Schedule
-                                join loan in _context.LoanDetails
+                 var result = from schedule in _context.Payment_Schedule join loan in _context.LoanDetails
                                 on schedule.Loan_Id equals loan.LoanId
                                 select new Payment_Schedule {
                                     Id = schedule.Id,
@@ -36,8 +30,6 @@ namespace Application.PaymentScheduleService
                                     Monthly_Payment_Amount = schedule.Monthly_Payment_Amount,
                                     Escrow_Amount = schedule.Escrow_Amount,
                                     UPB_Amount = schedule.UPB_Amount,
-
-                                    Loan_Id = schedule.Loan_Id,
                                     TotalLoanAmount=schedule.TotalLoanAmount,
                                     Note_Interest_Rate=schedule.Note_Interest_Rate
                                 };
