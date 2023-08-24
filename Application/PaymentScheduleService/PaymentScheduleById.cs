@@ -36,6 +36,10 @@ namespace Application.PaymentScheduleService
                                     Monthly_Payment_Amount = schedule.Monthly_Payment_Amount,
                                     Escrow_Amount = schedule.Escrow_Amount,
                                     UPB_Amount = schedule.UPB_Amount,
+
+                                    Loan_Id = schedule.Loan_Id,
+                                    TotalLoanAmount=schedule.TotalLoanAmount,
+                                    Note_Interest_Rate=schedule.Note_Interest_Rate
                                 };
 
                 List<Payment_Schedule> payments = new List<Payment_Schedule>();

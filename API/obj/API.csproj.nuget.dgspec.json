@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj": {}
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\API\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -27,8 +29,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj"
               }
             }
           }
@@ -105,33 +107,35 @@
         }
       }
     },
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -187,22 +191,24 @@
         }
       }
     },
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -250,30 +256,32 @@
         }
       }
     },
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }

@@ -15,7 +15,7 @@ namespace API.Controllers
             return await Mediator.Send(new Escrow_GetBenificiary.Query());
         }
          [HttpPost]
-         public async Task<IActionResult> CreateBeneficiary(Benificiary benificiary)
+         public async Task<IActionResult> CreateBeneficiary(List<Benificiary> benificiary)
          {
             
             return Ok(await Mediator.Send(new Escrow_Benificiary.Command { benificiary =   benificiary}));

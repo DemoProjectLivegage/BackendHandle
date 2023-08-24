@@ -1,8 +1,8 @@
 using API.Controllers.DTO;
 using Application.DTO;
 using Domain;
-using MediatR;
 using Persistence;
+using MediatR;
 
 namespace Application.Escrow_schedule
 {
