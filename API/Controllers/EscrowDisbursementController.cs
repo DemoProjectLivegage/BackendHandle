@@ -40,7 +40,7 @@ namespace API.Controllers
 
         [HttpGet("{id}")]
         public async Task<ActionResult<List<EscrowDisbursementDTO>>> getEscrowById(int id) {
-            List<Escrow_Disbursement_Schedule> list =  await Mediator.Send(new GetEscrowById.Query{Id = id});
+            List<Escrow_Disbursement_Schedule> list =   await Mediator.Send(new GetEscrowById.Query{Id = id});
             List<EscrowDisbursementDTO> newList = new List<EscrowDisbursementDTO>();
 
             foreach (var item in list)

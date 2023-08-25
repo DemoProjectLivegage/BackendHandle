@@ -14,11 +14,11 @@ namespace Application.Escrow_schedule
     public class GetEscrowById
     {
         public class Query : IRequest<List<Escrow_Disbursement_Schedule>> {
-            public int Id {get; set;}
+            public int Id;
         }
         public class Handler : IRequestHandler<Query, List<Escrow_Disbursement_Schedule>>
         {
-            public DatabaseContext context { get; }
+            public DatabaseContext context;
             public Handler(DatabaseContext context)
             {
                 this.context = context;
@@ -26,8 +26,11 @@ namespace Application.Escrow_schedule
 
             public async Task<List<Escrow_Disbursement_Schedule>> Handle(Query request, CancellationToken cancellationToken)
             {
-                Payment_Schedule newList = await this.context.Payment_Schedule.FindAsync(request.Id);
-                if(!newList.Escrow) return null;
+                List<Payment_Schedule> newList = await this.context.Payment_Schedule.ToListAsync();
+                newList = newList.OrderBy(x=>x.Loan_Id).ToList();
+                newList = newList.FindAll(x=> x.Loan_Id==request.Id).ToList();
+
+                if(!newList[0].Escrow) return null;
                 
                 List<Escrow_Disbursement_Schedule> list = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
                 // list.OrderBy(a => a.Loan_Id).GroupBy(x => x.Loan_Id);
