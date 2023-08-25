@@ -81,8 +81,6 @@ namespace Application.Escrow_schedule
 
                 n=12;
                 Benificiary ben2 =  this.context.Benificiary.Find(beneficiary_2.BeneficiaryId);
-                Console.WriteLine(ben2.frequency);
-                Console.ReadLine();
                 if(ben2.frequency == "ANNUALLY") n=1;
                 else if(ben2.frequency == "QUARTERLY") n=4;
                 num = 12/n;
