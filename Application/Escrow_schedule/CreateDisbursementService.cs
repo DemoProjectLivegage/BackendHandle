@@ -50,10 +50,10 @@ namespace Application.Escrow_schedule
                     Dues.date = Dues.date.AddMonths(i+1);
                     dueList.Add(Dues);
                 }
-                await this.context.AddRangeAsync(dueList);
-                await this.context.SaveChangesAsync();
+                // await this.context.AddRangeAsync(dueList);
+                // await this.context.SaveChangesAsync();
 
-                List<Escrow_Disbursement_Schedule> disbursementList = new List<Escrow_Disbursement_Schedule>();
+                // List<Escrow_Disbursement_Schedule> dueList = new List<Escrow_Disbursement_Schedule>();
                 int n=12;
                 Benificiary ben1 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
                 if(ben1.frequency == "ANNUALLY") n=1;
@@ -66,7 +66,7 @@ namespace Application.Escrow_schedule
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_1.BeneficiaryId;
                     disbursement.disbursement_frequency = ben1.frequency;
-                    disbursementList.Add(disbursement);
+                    dueList.Add(disbursement);
                     num += 12/n;
                 }
 
@@ -82,7 +82,7 @@ namespace Application.Escrow_schedule
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_2.BeneficiaryId;
                     disbursement.disbursement_frequency = ben2.frequency;
-                    disbursementList.Add(disbursement);
+                    dueList.Add(disbursement);
                     num += 12/n;
                 }
 
@@ -98,7 +98,7 @@ namespace Application.Escrow_schedule
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_3.BeneficiaryId;
                     disbursement.disbursement_frequency = ben3.frequency;
-                    disbursementList.Add(disbursement);
+                    dueList.Add(disbursement);
                     num += 12/n;
                 }
 
@@ -114,7 +114,7 @@ namespace Application.Escrow_schedule
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_4.BeneficiaryId;
                     disbursement.disbursement_frequency = ben4.frequency;
-                    disbursementList.Add(disbursement);
+                    dueList.Add(disbursement);
                     num += 12/n;
                 }
 
@@ -130,28 +130,30 @@ namespace Application.Escrow_schedule
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_5.BeneficiaryId;
                     disbursement.disbursement_frequency = ben5.frequency;
-                    disbursementList.Add(disbursement);
+                    dueList.Add(disbursement);
                     num += 12/n;
                 }
-                await this.context.AddRangeAsync(disbursementList);
-                await this.context.SaveChangesAsync();
+                // await this.context.AddRangeAsync(dueList);
+                // await this.context.SaveChangesAsync();
 
-                List<Escrow_Disbursement_Schedule> escrows = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
-                escrows.OrderBy(x=>x.Loan_Id).ThenBy(x=>x.date).ToList();
+                // List<Escrow_Disbursement_Schedule> escrows = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
+                dueList = dueList.OrderBy(x=>x.Loan_Id).ThenBy(x=>x.date).ToList();
+                // dueList.OrderBy(x=>x.Loan_Id).ThenBy(x=>x.date);
                 int lastLoanId = 0;
                 decimal lastBal = 0;
-                foreach (var item in escrows)
+                foreach (var item in dueList)
                 {
                     if(item.Loan_Id != lastLoanId) {
                         lastBal = 0;
                     }
                     decimal currentBal = lastBal + item.escrow_payment_amount - item.escrow_disbursement;
                     item.Escrow_Balance = currentBal;
-                    this.context.Update(item);
+                    // this.context.Update(item);
                     lastBal = currentBal;
                     lastLoanId = item.Loan_Id;
                 }
-                this.context.SaveChanges();
+                await this.context.AddRangeAsync(dueList);
+                await this.context.SaveChangesAsync();
 
                 List<Payment_Schedule> payment = await this.context.Payment_Schedule.ToListAsync();
                 List<Payment_Schedule> list = new List<Payment_Schedule>();
