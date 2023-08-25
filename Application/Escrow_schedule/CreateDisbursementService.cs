@@ -23,8 +23,13 @@ namespace Application.Escrow_schedule
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                Payment_Schedule payment_ = await this.context.Payment_Schedule.FindAsync(request.loanBeneficiaryDTO.loanId);
-                if(!payment_.Escrow) return Unit.Value;
+                List<Payment_Schedule> payment_ = await this.context.Payment_Schedule.ToListAsync();
+                payment_ = payment_.OrderBy(x => x.Loan_Id).ToList();
+                payment_ = payment_.FindAll(x=>x.Loan_Id==request.loanBeneficiaryDTO.loanId);
+                
+                if(!payment_[0].Escrow) {
+                    return Unit.Value;
+                }
 
                 LoanDetails loan = await this.context.LoanDetails.FindAsync(request.loanBeneficiaryDTO.loanId);
                 decimal annualPaymnet = 0;
