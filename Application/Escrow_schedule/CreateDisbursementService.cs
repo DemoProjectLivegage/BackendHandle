@@ -23,6 +23,9 @@ namespace Application.Escrow_schedule
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
+                Payment_Schedule payment_ = await this.context.Payment_Schedule.FindAsync(request.loanBeneficiaryDTO.loanId);
+                if(!payment_.Escrow) return Unit.Value;
+
                 LoanDetails loan = await this.context.LoanDetails.FindAsync(request.loanBeneficiaryDTO.loanId);
                 decimal annualPaymnet = 0;
 
@@ -44,9 +47,12 @@ namespace Application.Escrow_schedule
                 decimal monthlyPayment = annualPaymnet/12;
 
                 List<Escrow_Disbursement_Schedule> dueList = new List<Escrow_Disbursement_Schedule>();
+
+                decimal previousBalance = 0;
                 for (int i = 0; i < 12; i++)
                 {
-                    Escrow_Disbursement_Schedule Dues = EscPayment(loan, monthlyPayment);
+                    if(dueList.Count()!=0) previousBalance = dueList.Last().Escrow_Balance;
+                    Escrow_Disbursement_Schedule Dues = EscPayment(loan, monthlyPayment, previousBalance);
                     Dues.date = Dues.date.AddMonths(i+1);
                     dueList.Add(Dues);
                 }
@@ -55,11 +61,14 @@ namespace Application.Escrow_schedule
 
                 // List<Escrow_Disbursement_Schedule> dueList = new List<Escrow_Disbursement_Schedule>();
                 int n=12;
-                Benificiary ben1 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
-                if(ben1.frequency == "ANNUALLY") n=1;
-                else if(ben1.frequency == "QUARTERLY") n=4;
+                Benificiary ben1 =  this.context.Benificiary.Find(beneficiary_1.BeneficiaryId);
+                if(ben1.frequency=="ANNUALLY") 
+                {
+                    n=1;
+                }
+                else if(ben1.frequency=="QUARTERLY"){ n=4;}
                 int num = 12/n;
-                for (int i = 1; i <= n; i++)
+                for (int i = 0; i < n; i++)
                 {
                     Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_1, loan.LoanId);
                     disbursement.Loan_Id = loan.LoanId;
@@ -71,13 +80,15 @@ namespace Application.Escrow_schedule
                 }
 
                 n=12;
-                Benificiary ben2 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
+                Benificiary ben2 =  this.context.Benificiary.Find(beneficiary_2.BeneficiaryId);
+                Console.WriteLine(ben2.frequency);
+                Console.ReadLine();
                 if(ben2.frequency == "ANNUALLY") n=1;
                 else if(ben2.frequency == "QUARTERLY") n=4;
                 num = 12/n;
                 for (int i = 1; i <= n; i++)
                 {
-                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_1, loan.LoanId);
+                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_2, loan.LoanId);
                     disbursement.Loan_Id = loan.LoanId;
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_2.BeneficiaryId;
@@ -87,13 +98,13 @@ namespace Application.Escrow_schedule
                 }
 
                 n=12;
-                Benificiary ben3 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
+                Benificiary ben3 =  this.context.Benificiary.Find(beneficiary_3.BeneficiaryId);
                 if(ben3.frequency == "ANNUALLY") n=1;
                 else if(ben3.frequency == "QUARTERLY") n=4;
                 num = 12/n;
                 for (int i = 1; i <= n; i++)
                 {
-                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_1, loan.LoanId);
+                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_3, loan.LoanId);
                     disbursement.Loan_Id = loan.LoanId;
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_3.BeneficiaryId;
@@ -103,13 +114,13 @@ namespace Application.Escrow_schedule
                 }
 
                 n=12;
-                Benificiary ben4 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
+                Benificiary ben4 =  this.context.Benificiary.Find(beneficiary_4.BeneficiaryId);
                 if(ben4.frequency == "ANNUALLY") n=1;
                 else if(ben4.frequency == "QUARTERLY") n=4;
                 num = 12/n;
                 for (int i = 1; i <= n; i++)
                 {
-                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_1, loan.LoanId);
+                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_4, loan.LoanId);
                     disbursement.Loan_Id = loan.LoanId;
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_4.BeneficiaryId;
@@ -119,13 +130,13 @@ namespace Application.Escrow_schedule
                 }
 
                 n=12;
-                Benificiary ben5 = await this.context.Benificiary.FindAsync(beneficiary_1.BeneficiaryId);
+                Benificiary ben5 =  this.context.Benificiary.Find(beneficiary_5.BeneficiaryId);
                 if(ben5.frequency == "ANNUALLY") n=1;
                 else if(ben5.frequency == "QUARTERLY") n=4;
                 num = 12/n;
                 for (int i = 1; i <= n; i++)
                 {
-                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_1, loan.LoanId);
+                    Escrow_Disbursement_Schedule disbursement = await EscDisbursement(beneficiary_5, loan.LoanId);
                     disbursement.Loan_Id = loan.LoanId;
                     disbursement.date = disbursement.date.AddMonths(num);
                     disbursement.beneficiary_id = beneficiary_5.BeneficiaryId;
@@ -190,17 +201,16 @@ namespace Application.Escrow_schedule
                 return escPayment;
             }
 
-            public Escrow_Disbursement_Schedule EscPayment(LoanDetails loan, decimal monthlyPayment) {
+            public Escrow_Disbursement_Schedule EscPayment(LoanDetails loan, decimal monthlyPayment, decimal previousBalance) {
                 Escrow_Disbursement_Schedule escPayment = new Escrow_Disbursement_Schedule();
 
                 escPayment.date = loan.PmtDueDate;
                 escPayment.escrow_payment_amount = monthlyPayment;
 
-                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement_Schedule.OrderBy(x=>x.id).LastOrDefault(x => x.Loan_Id == loan.LoanId);
-                decimal lastBalance = 0;
-                if(previousBalance != null) lastBalance = previousBalance.Escrow_Balance;
+                // Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement_Schedule.OrderBy(x=>x.id).LastOrDefault(x => x.Loan_Id == loan.LoanId);
+                
 
-                escPayment.Escrow_Balance = lastBalance + monthlyPayment;
+                escPayment.Escrow_Balance = previousBalance + monthlyPayment;
                 escPayment.Loan_Id = loan.LoanId;
 
                 return escPayment;
@@ -216,9 +226,11 @@ namespace Application.Escrow_schedule
 
                 escDisburse.escrow_disbursement = beneficiaryDto.disbursementAmount;
 
-                Escrow_Disbursement_Schedule previousBalance = this.context.Escrow_Disbursement_Schedule.OrderBy(x=>x.id).LastOrDefault(x => x.Loan_Id == loanId);
+                List<Escrow_Disbursement_Schedule> previousBalance = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
+                previousBalance = previousBalance.FindAll(x=>x.Loan_Id == loanId);
+                previousBalance = previousBalance.OrderBy(x=>x.date).ToList();
                 decimal lastBalance = 0;
-                if(previousBalance != null) lastBalance = previousBalance.Escrow_Balance;
+                if(previousBalance.Count !=0 ) lastBalance = previousBalance.Last().Escrow_Balance;
 
                 escDisburse.Escrow_Balance = lastBalance - beneficiaryDto.disbursementAmount;
 
