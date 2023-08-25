@@ -13,11 +13,15 @@ namespace Domain
 
         public DateOnly date {get; set;}
 
+        [Column(TypeName = "decimal(8,2)")]
         public decimal escrow_payment_amount {get; set;}
+
+        [Column(TypeName = "decimal(8,2)")]
         public decimal escrow_disbursement {get; set;}
 
         public string Escrow_Name {get; set;}
 
+        [Column(TypeName = "decimal(8,2)")]
         public decimal Escrow_Balance {get; set;}
 
         [ForeignKey("{LoanDetails}")]
