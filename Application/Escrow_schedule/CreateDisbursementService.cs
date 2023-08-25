@@ -3,6 +3,8 @@ using Application.DTO;
 using Domain;
 using Persistence;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Application.Escrow_schedule
 {
@@ -22,21 +24,22 @@ namespace Application.Escrow_schedule
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 LoanDetails loan = await this.context.LoanDetails.FindAsync(request.loanBeneficiaryDTO.loanId);
+                decimal annualPaymnet = 0;
 
                 BeneficiaryDTO beneficiary_1 = request.loanBeneficiaryDTO.beneficiary_1;
-                decimal annualPaymnet = await findAnnualPayment(beneficiary_1);
+                annualPaymnet = await findAnnualPaymentAsync(beneficiary_1);
 
                 BeneficiaryDTO beneficiary_2 = request.loanBeneficiaryDTO.beneficiary_2;
-                annualPaymnet = annualPaymnet + await findAnnualPayment(beneficiary_1);
+                annualPaymnet += await findAnnualPaymentAsync(beneficiary_2);
 
                 BeneficiaryDTO beneficiary_3 = request.loanBeneficiaryDTO.beneficiary_3;
-                annualPaymnet = annualPaymnet + await findAnnualPayment(beneficiary_1);
+                annualPaymnet += await findAnnualPaymentAsync(beneficiary_3);
 
                 BeneficiaryDTO beneficiary_4 = request.loanBeneficiaryDTO.beneficiary_4;
-                annualPaymnet = annualPaymnet + await findAnnualPayment(beneficiary_1);
+                annualPaymnet += await findAnnualPaymentAsync(beneficiary_4);
 
                 BeneficiaryDTO beneficiary_5 = request.loanBeneficiaryDTO.beneficiary_5;
-                annualPaymnet = annualPaymnet + await findAnnualPayment(beneficiary_1);
+                annualPaymnet += await findAnnualPaymentAsync(beneficiary_5);
 
                 decimal monthlyPayment = annualPaymnet/12;
 
@@ -133,11 +136,39 @@ namespace Application.Escrow_schedule
                 await this.context.AddRangeAsync(disbursementList);
                 await this.context.SaveChangesAsync();
 
-                Escrow_Disbursement_Schedule schedule = await this.context.Escrow_Disbursement_Schedule.FindAsync();
+                List<Escrow_Disbursement_Schedule> escrows = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
+                escrows.OrderBy(x=>x.Loan_Id).ThenBy(x=>x.date).ToList();
+                int lastLoanId = 0;
+                decimal lastBal = 0;
+                foreach (var item in escrows)
+                {
+                    if(item.Loan_Id != lastLoanId) {
+                        lastBal = 0;
+                    }
+                    decimal currentBal = lastBal + item.escrow_payment_amount - item.escrow_disbursement;
+                    item.Escrow_Balance = currentBal;
+                    this.context.Update(item);
+                    lastBal = currentBal;
+                    lastLoanId = item.Loan_Id;
+                }
+                this.context.SaveChanges();
+
+                List<Payment_Schedule> payment = await this.context.Payment_Schedule.ToListAsync();
+                List<Payment_Schedule> list = new List<Payment_Schedule>();
+                foreach (var item in payment)
+                {
+                    if(item.Loan_Id == request.loanBeneficiaryDTO.loanId) {
+                        item.Escrow_Amount = monthlyPayment;
+                        item.Monthly_Payment_Amount = item.Principal_Amount + item.Interest_Amount + item.Escrow_Amount;
+                        list.Add(item);
+                    }
+                }
+                await this.context.AddRangeAsync();
+                await this.context.SaveChangesAsync();
 
                 return Unit.Value;
             }
-            public async Task<decimal> findAnnualPayment(BeneficiaryDTO beneficiaryDto) {
+            public async Task<decimal> findAnnualPaymentAsync(BeneficiaryDTO beneficiaryDto) {
                 Benificiary beneficiary = await this.context.Benificiary.FindAsync(beneficiaryDto.BeneficiaryId);
                 string frequency = beneficiary.frequency;
 
@@ -146,7 +177,7 @@ namespace Application.Escrow_schedule
                 {
                     n = 12;
                 }
-                else if(frequency == "QUARTERLLY") {
+                else if(frequency == "QUARTERLY") {
                     n = 4;
                 }
 

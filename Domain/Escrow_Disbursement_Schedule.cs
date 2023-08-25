@@ -20,7 +20,7 @@ namespace Domain
 
         public decimal Escrow_Balance {get; set;}
 
-        [ForeignKey("{LoanInformationId}")]
+        [ForeignKey("{LoanDetails}")]
         public int Loan_Id {get; set;}
 
         public string disbursement_frequency {get; set;}

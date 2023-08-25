@@ -28,16 +28,18 @@ namespace Application.Escrow_schedule
             public async Task<List<Benificiary>> Handle(Query request, CancellationToken cancellationToken)
             {
                 List<Escrow_Disbursement_Schedule> disburse = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
-                disburse.OrderBy(x=>x.Loan_Id).GroupBy(a => a.Loan_Id);
+                disburse.OrderBy(x=>x.Loan_Id).GroupBy(a => a.Loan_Id).ToList();
                 disburse.Find(x=>x.Loan_Id==request.Id);
                 disburse.DistinctBy(a => a.beneficiary_id);
 
                 List<Benificiary> list = new List<Benificiary>();
                 foreach (var item in disburse)
                 {
-                    int Id = item.beneficiary_id;
-                    Benificiary ben = await this.context.Benificiary.FindAsync(Id);
-                    list.Add(ben);
+                        int Id = item.beneficiary_id;
+                        if(Id != 0) {
+                            Benificiary ben = await this.context.Benificiary.FindAsync(Id);
+                            list.Add(ben);
+                        }
                 }
 
                 return list;
