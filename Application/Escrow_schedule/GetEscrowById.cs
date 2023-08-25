@@ -27,12 +27,13 @@ namespace Application.Escrow_schedule
             public async Task<List<Escrow_Disbursement_Schedule>> Handle(Query request, CancellationToken cancellationToken)
             {
                 List<Payment_Schedule> newList = await this.context.Payment_Schedule.ToListAsync();
+                List<Escrow_Disbursement_Schedule> dummy = new List<Escrow_Disbursement_Schedule>();
                 newList = newList.OrderBy(x=>x.Loan_Id).ToList();
                 newList = newList.FindAll(x=> x.Loan_Id==request.Id).ToList();
-
-                if(!newList[0].Escrow) return null;
-                
+                if(newList.Count()==0) return dummy;
+                if(!newList[0].Escrow) return dummy;
                 List<Escrow_Disbursement_Schedule> list = await this.context.Escrow_Disbursement_Schedule.ToListAsync();
+
                 // list.OrderBy(a => a.Loan_Id).GroupBy(x => x.Loan_Id);
                 // list.OrderBy(x => x.date);
                 // var byId = list.Find(x => x.Loan_Id == request.Id);
