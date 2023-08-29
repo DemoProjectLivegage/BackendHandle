@@ -4,7 +4,6 @@ using Domain;
 using Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Application.Escrow_schedule
 {

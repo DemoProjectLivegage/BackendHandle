@@ -13,6 +13,7 @@
           "Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "Microsoft.EntityFrameworkCore": "7.0.10",
           "Persistence": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
         },
@@ -682,6 +683,7 @@
         "dependencies": {
           "CsvHelper": "30.0.1",
           "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
         },
