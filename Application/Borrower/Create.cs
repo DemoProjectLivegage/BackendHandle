@@ -206,7 +206,8 @@ namespace Application.Borrower
                                  Tenure = information.LoanTerm,
                                  Frequency = information.PaymentFreq,
                                  Loan_Id = loan.LoanId,
-                                 Escrow = information.Escrow
+                                 Escrow = information.Escrow,
+                                 RemainingPayments=loan.RemainingPayments
                              };
 
                     var paymentList = new List<Payment_Schedule>();
@@ -226,6 +227,7 @@ namespace Application.Borrower
                         decimal f = (decimal)Math.Pow((double)num, (double)t);
                         decimal d = f - 1;
                         decimal UPB_Amount = item.UPB_Amount;
+                        int local=item.RemainingPayments;
 
                         for (int i = 0; i < 12; i++)
                         {
@@ -237,6 +239,7 @@ namespace Application.Borrower
                             payment.Note_Interest_Rate = item.Note_Interest_Rate;
                             payment.Escrow = item.Escrow;
                             payment.Escrow_Amount = item.Escrow_Amount;
+                            payment.RemainingPayments=local--;
 
                             if(!item.Escrow) {
                                 payment.Escrow_Amount = 0;

@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Persistence;
 using Application.Payment_Hierarchy_;
 using Domain;
-using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {

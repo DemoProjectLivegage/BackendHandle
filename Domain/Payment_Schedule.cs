@@ -37,11 +37,13 @@ namespace Domain
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal TotalLoanAmount {get; set;}
+        public int RemainingPayments {get; set;}
 
         public int Tenure {get; set;}
 
         public string Frequency {get; set;}
 
         public bool Escrow {get; set;}
+
     }
 }

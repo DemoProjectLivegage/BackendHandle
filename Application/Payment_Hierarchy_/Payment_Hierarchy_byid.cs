@@ -25,7 +25,7 @@ namespace Application.Payment_Hierarchy_
             }
 
             public async Task<Payment_Hierarchy> Handle(Query request, CancellationToken cancellationToken)
-            {
+            {    
                 return await _context.Payment_Hierarchy.FindAsync(request.Id);
             }
         }

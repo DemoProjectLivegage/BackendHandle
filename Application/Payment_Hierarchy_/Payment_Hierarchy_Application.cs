@@ -28,14 +28,15 @@ namespace Application.Payment_Hierarchy_
                     Payment_Schedule waterfall = await _context.Payment_Schedule.Where(x => x.Loan_Id == request.id
                     && x.Due_Date == request.payment_date).FirstOrDefaultAsync();
 
-
+                    
 
                     Payment_Hierarchy modify = new Payment_Hierarchy()
                     {
                         Loan_id = waterfall.Loan_Id,
                         Monthly_Payment_Amount = waterfall.Monthly_Payment_Amount,
                         actual_receive = request.incoming_amount,
-                        threshold = 50
+                        threshold = 50,
+
                     };
                     decimal remaining = request.incoming_amount;//300
 
@@ -71,10 +72,12 @@ namespace Application.Payment_Hierarchy_
                     {
                         modify.principal = waterfall.Principal_Amount;//147
                         remaining = remaining - waterfall.Principal_Amount;//246-147=99
+                        modify.UPB_Amount=waterfall.UPB_Amount;
                     }
                     else
                     {
                         modify.principal = remaining;
+                        modify.UPB_Amount=waterfall.UPB_Amount+(modify.principal-remaining);
                         remaining = 0;
                     }
 
@@ -101,6 +104,19 @@ namespace Application.Payment_Hierarchy_
                     }
                     _context.AddRange(modify);
                     _context.SaveChanges();
+
+                    var ld=await _context.LoanDetails.FindAsync(request.id);
+                    var new_id=waterfall.Id+1;
+                    
+                    Payment_Schedule ps =await _context.Payment_Schedule.FindAsync(new_id);
+                    ld.PIPmtAmt=ps.Principal_Amount+ ps.Interest_Amount;
+                    ld.UPBAmt=ps.UPB_Amount;
+                    ld.RemainingPayments=ps.RemainingPayments;
+                    ld.PmtDueDate=ps.Due_Date;
+                    
+                    _context.LoanDetails.UpdateRange(ld);
+                    _context.SaveChanges();
+
                     return Unit.Value;
                 }
                 catch (Exception e)

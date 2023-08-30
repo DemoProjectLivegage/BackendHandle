@@ -24,5 +24,6 @@ namespace Domain
         public decimal late_charge {set; get;}   
         public decimal other_fee {set; get;}   
         public decimal suspence {set; get;}   
+        public decimal UPB_Amount {set; get;}   
     }
 }

@@ -34,7 +34,8 @@ namespace Application.PaymentScheduleService
                                     Note_Interest_Rate=schedule.Note_Interest_Rate,
                                     Tenure = schedule.Tenure,
                                     Escrow = schedule.Escrow,
-                                    Frequency = schedule.Frequency
+                                    Frequency = schedule.Frequency,
+                                    RemainingPayments=schedule.RemainingPayments
                                 };
 
                 List<Payment_Schedule> payments = new List<Payment_Schedule>();

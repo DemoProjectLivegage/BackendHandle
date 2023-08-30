@@ -1,6 +1,8 @@
 using Application.Borrower;
+using Application.DTO;
 using Application.LoanInformations;
 using Application.LoansDetails;
+using Application.PaymentScheduleService;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,11 +50,11 @@ namespace API.Controllers
             return Ok(await Mediator.Send(new Create.Command { file = tempFilePath }));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("dynamic/")]
 
-        public async Task<ActionResult<LoanDetails>> GetLoanDetails(int id)
+        public async Task<ActionResult<dynamic_details>> GetLoanDetails(int id,DateOnly date)
         {
-            return await Mediator.Send(new Loandetail.Query { LoanInformationId = id });
+            return await Mediator.Send(new Loandetail.Query { LoanInformationId = id , due_date=date });
         }
 
         [HttpGet("loaninfo/{id}")]
