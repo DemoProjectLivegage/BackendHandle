@@ -25,6 +25,15 @@ namespace Application.Mapper
             .ForMember(dest => dest.Suspense, source=> source.MapFrom(source =>"$"+ source.suspence))
             .ForMember(dest => dest.UPBAmount, source=> source.MapFrom(source =>"$"+ source.UPB_Amount)).ReverseMap();
 
+
+            CreateMap<Payment_Schedule, PaymentDTO>()
+            .ForMember(dest => dest.Principal_Amount, source=> source.MapFrom(source =>"$"+ source.Principal_Amount))
+            .ForMember(dest => dest.Interest_Amount, source=> source.MapFrom(source =>"$"+ source.Interest_Amount))
+            .ForMember(dest => dest.Escrow_Amount, source=> source.MapFrom(source =>"$"+ source.Escrow_Amount))
+            .ForMember(dest => dest.Monthly_Payment_Amount, source=> source.MapFrom(source =>"$"+ source.Monthly_Payment_Amount))
+            .ForMember(dest => dest.UPB_Amount, source=> source.MapFrom(source =>"$"+ source.UPB_Amount))
+            .ReverseMap();
+
         }
         
     }
