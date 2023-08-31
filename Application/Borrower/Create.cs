@@ -211,9 +211,9 @@ namespace Application.Borrower
                                  RemainingPayments = loan.RemainingPayments
                              };
 
+                    //Initiating a new payment schedule list
                     var paymentList = new List<Payment_Schedule>();
-                    // var escrowBeneficiaryList = new List<Escrow_Beneficiary>();
-                    // var escrowList = new List<Escrow_Disbursement_Schedule>();
+                    
 
                     foreach (var item in db)
                     {
@@ -247,12 +247,8 @@ namespace Application.Borrower
                             }
 
                             paymentList.Add(payment);
-
-                            // var escrowDisbursementSchedule = new Escrow_Disbursement_Schedule();
-                            // escrowDisbursementSchedule.date = item.Due_Date.AddMonths(i+1);
-                            // escrowDisbursementSchedule.Disbursement_Frequency = 
-                            // escrowDisbursementSchedule.Incoming_Escrow = payment.Tax_Amount + payment.Insurance_Amount;
                             UPB_Amount = payment.UPB_Amount;
+                            
                             var loan_details = _context.LoanDetails.Find(item.Loan_Id);
                             loan_details.monthly_payment_amount = payment.Monthly_Payment_Amount;
                             _context.LoanDetails.Update(loan_details);

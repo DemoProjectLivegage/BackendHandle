@@ -681,3 +681,8 @@ C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\obj\Debug\net
 C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\obj\Debug\net7.0\API.pdb
 C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\obj\Debug\net7.0\ref\API.dll
+D:\Demo\BackendHandle\API\bin\Debug\net7.0\AutoMapper.dll
+D:\Demo\BackendHandle\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.dll
+D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll

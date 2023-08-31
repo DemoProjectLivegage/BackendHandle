@@ -1,36 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj": {}
+    "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj": {
+    "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Application\\obj\\",
+        "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
+              "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -45,6 +47,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
@@ -86,26 +92,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -149,34 +157,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Persistence\\obj\\",
+        "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
+              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }
@@ -224,7 +234,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,6 +8,7 @@ using Application.Borrower;
 using FluentValidation;
 using Application.DataStructures;
 using Domain;
+using Application.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,7 @@ builder.Services.AddCors(opt=>{
     });
 
 });
+builder.Services.AddAutoMapper(typeof(CustomMapper));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
