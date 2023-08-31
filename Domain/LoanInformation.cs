@@ -14,7 +14,6 @@ namespace Domain
     public int LoanInformationId { get; set; }
 
     public int PriorServicerLoanId { get; set; }
-
     public DateOnly NoteDate { get; set; }
 
     public DateOnly LoanBoardingDate { get; set; }

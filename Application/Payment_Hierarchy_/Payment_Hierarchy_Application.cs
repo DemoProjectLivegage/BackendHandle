@@ -28,7 +28,6 @@ namespace Application.Payment_Hierarchy_
                     Payment_Schedule waterfall = await _context.Payment_Schedule.Where(x => x.Loan_Id == request.id
                     && x.Due_Date == request.payment_date).FirstOrDefaultAsync();
 
-                    
 
                     Payment_Hierarchy modify = new Payment_Hierarchy()
                     {
@@ -36,6 +35,8 @@ namespace Application.Payment_Hierarchy_
                         Monthly_Payment_Amount = waterfall.Monthly_Payment_Amount,
                         actual_receive = request.incoming_amount,
                         threshold = 50,
+                        date =  DateOnly.FromDateTime(DateTime.Now),
+                        // UPB_Amount = waterfall.UPB_Amount
 
                     };
                     decimal remaining = request.incoming_amount;//300
@@ -44,6 +45,10 @@ namespace Application.Payment_Hierarchy_
                     {
                         modify.suspence = request.incoming_amount;
                         remaining = 0;
+                        modify.UPB_Amount = waterfall.UPB_Amount+waterfall.Principal_Amount;
+                        await _context.Payment_Hierarchy.AddAsync(modify);
+                        await _context.SaveChangesAsync();
+                        return Unit.Value;
                     }
 
 

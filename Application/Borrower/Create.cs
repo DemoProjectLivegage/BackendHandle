@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 using Application.DataStructures;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -177,7 +178,7 @@ namespace Application.Borrower
                                         PIPmtAmt = data[i].PIPmtAmt,
                                         UPBAmt = data[i].UPBAmt,
                                         RemainingPayments = data[i].RemainingPayments,
-                                        PmtDueDate = data[i].PmtDueDate,
+                                        PmtDueDate = data[i].PmtDueDate.AddMonths(1),
                                         LoanInformationId = loanInfo.LoanInformationId,
                                     });
                                     count -= 1;
@@ -189,7 +190,7 @@ namespace Application.Borrower
                     _context.SaveChanges();
 
 
-    
+
                     // return Task.FromResult(Unit.Value);
 
 
@@ -207,7 +208,7 @@ namespace Application.Borrower
                                  Frequency = information.PaymentFreq,
                                  Loan_Id = loan.LoanId,
                                  Escrow = information.Escrow,
-                                 RemainingPayments=loan.RemainingPayments
+                                 RemainingPayments = loan.RemainingPayments
                              };
 
                     var paymentList = new List<Payment_Schedule>();
@@ -227,8 +228,7 @@ namespace Application.Borrower
                         decimal f = (decimal)Math.Pow((double)num, (double)t);
                         decimal d = f - 1;
                         decimal UPB_Amount = item.UPB_Amount;
-                        int local=item.RemainingPayments;
-
+                        int local = item.RemainingPayments;
                         for (int i = 0; i < 12; i++)
                         {
                             var payment = addPayment(P, f, d, UPB_Amount, r, item.Due_Date, i);
@@ -239,12 +239,13 @@ namespace Application.Borrower
                             payment.Note_Interest_Rate = item.Note_Interest_Rate;
                             payment.Escrow = item.Escrow;
                             payment.Escrow_Amount = item.Escrow_Amount;
-                            payment.RemainingPayments=local--;
+                            payment.RemainingPayments = local--;
 
-                            if(!item.Escrow) {
+                            if (!item.Escrow)
+                            {
                                 payment.Escrow_Amount = 0;
                             }
-                            
+
                             paymentList.Add(payment);
 
                             // var escrowDisbursementSchedule = new Escrow_Disbursement_Schedule();
@@ -252,6 +253,9 @@ namespace Application.Borrower
                             // escrowDisbursementSchedule.Disbursement_Frequency = 
                             // escrowDisbursementSchedule.Incoming_Escrow = payment.Tax_Amount + payment.Insurance_Amount;
                             UPB_Amount = payment.UPB_Amount;
+                            var loan_details = _context.LoanDetails.Find(item.Loan_Id);
+                            loan_details.monthly_payment_amount = payment.Monthly_Payment_Amount;
+                            _context.LoanDetails.Update(loan_details);
                         }
                     }
 
@@ -270,7 +274,7 @@ namespace Application.Borrower
                 item.Interest_Amount = UPB * r;
                 item.Principal_Amount = item.Monthly_Payment_Amount - item.Interest_Amount;
                 item.UPB_Amount = UPB - item.Principal_Amount;
-                item.Due_Date = date.AddMonths(num + 1);
+                item.Due_Date = date.AddMonths(num);
 
                 return item;
             }

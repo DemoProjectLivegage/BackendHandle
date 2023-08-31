@@ -62,5 +62,12 @@ namespace API.Controllers
         {
             return await Mediator.Send(new Loaninfodetail.Query { BorrowerId = Id });
         }
+
+
+        [HttpGet("loan_details/{id}")]
+        public async Task<ActionResult<LoanDetails>> GetLoanDetail(int Id)
+        {
+            return await Mediator.Send(new LoanDetailsAPI.Query { LoanId = Id });
+        }
     }
 }

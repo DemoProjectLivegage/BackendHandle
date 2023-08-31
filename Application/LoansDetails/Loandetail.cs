@@ -28,16 +28,17 @@ namespace Application.LoansDetails
       }
       public async Task<dynamic_details> Handle(Query request, CancellationToken cancellationToken)
       {
-        var detail =await _context.Payment_Schedule.Where
-        (l => l.Loan_Id == request.LoanInformationId &&  l.Due_Date == request.due_date).FirstOrDefaultAsync();
+        var detail =await _context.LoanDetails.Where
+        (l => l.LoanId == request.LoanInformationId ).FirstOrDefaultAsync();
       
 
         dynamic_details dto=new dynamic_details();
 
-        dto.UPB_Amount=detail.UPB_Amount;
-        dto.Due_Date=detail.Due_Date;
+        dto.UPB_Amount=detail.UPBAmt;
+        dto.Due_Date=detail.PmtDueDate;
         dto.RemainingPayments=detail.RemainingPayments;
-        dto.Monthly_Payment_Amount=detail.Monthly_Payment_Amount;       
+        // dto.Monthly_Payment_Amount=detail.Monthly_Payment_Amount;
+        dto.loan_info_id = detail.LoanId;  
 
       
         return dto;

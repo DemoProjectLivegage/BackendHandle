@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Application.Payment_Hierarchy_;
 using Domain;
+using Application.DTO;
 
 namespace API.Controllers
 {
@@ -21,11 +22,28 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Payment_Hierarchy>> GetAllHierarchy(int id)
-    {
-        return await  Mediator.Send(new Payment_Hierarchy_byid.Query { Id = id });
+        public async Task<List<TransactionDTO>> GetAllHierarchy(int id)
+        {
+            var hierarchy = await Mediator.Send(new Payment_Hierarchy_byid.Query { Id = id });
+            List<TransactionDTO> list = new List<TransactionDTO>();
+
+            foreach (var item in hierarchy)
+            {
+                TransactionDTO dto = new TransactionDTO();
+                dto.TransactionDate = item.date;
+                dto.SheduledAmount = item.Monthly_Payment_Amount;
+                dto.ReceivedAmount = item.actual_receive;
+                dto.InterestAmount = item.interest;
+                dto.PrincipalAmount = item.principal;
+                dto.EscrowAmount = item.escrow;
+                dto.LateCharges = item.late_charge;
+                dto.OtherFees = item.other_fee;
+                dto.Suspense = item.suspence;
+                dto.UPBAmount = item.UPB_Amount;
+                list.Add(dto);
+            }
+
+            return list;
+        }
     }
-
-
-}
 }
