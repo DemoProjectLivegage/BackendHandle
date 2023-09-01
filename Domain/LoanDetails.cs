@@ -11,8 +11,9 @@ namespace Domain
     { 
        [Key]     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LoanId {get;set;}
+        [Column(TypeName = "decimal(8,2)")]
         public required decimal PIPmtAmt {get; set;}
-
+        [Column(TypeName = "decimal(8,2)")]
         public required decimal UPBAmt {get; set;}
         public required int RemainingPayments {get; set;}
 

@@ -18,13 +18,16 @@ namespace Domain
 
     public DateOnly LoanBoardingDate { get; set; }
 
+    [Column(TypeName = "decimal(8,2)")]
     public decimal NoteRatePercent { get; set; }
 
    
     public bool Escrow { get; set; }
 
+    [Column(TypeName = "decimal(8,2)")]
     public decimal TaxInsurancePmtAmt { get; set; }
 
+    [Column(TypeName = "decimal(8,2)")]
     public decimal TotalLoanAmount { get; set; }
 
     public int LoanTerm { get; set; }
