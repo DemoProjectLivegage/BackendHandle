@@ -686,3 +686,5 @@ D:\Demo\BackendHandle\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.Depen
 D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.dll
 D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 D:\Demo\BackendHandle\API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\VSingh\Desktop\BackendHandle\API\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\VSingh\Desktop\BackendHandle\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

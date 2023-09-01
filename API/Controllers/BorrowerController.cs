@@ -80,13 +80,13 @@ namespace API.Controllers
 
 
         [HttpGet("loan_details/{id}")]
-        public async Task<ActionResult<LoanDetails>> GetLoanDetail(int Id)
+        public async Task<ActionResult<LoanDetailsDTO>> GetLoanDetail(int Id)
         {
             
             LoanDetails loan = await Mediator.Send(new LoanDetailsAPI.Query { LoanId = Id });
-            // LoanDetailsDTO newList = _mapper.Map<LoanDetailsDTO>(loan);
+            LoanDetailsDTO newList = _mapper.Map<LoanDetailsDTO>(loan);
 
-            return loan;
+            return newList;
         }
 
     }
