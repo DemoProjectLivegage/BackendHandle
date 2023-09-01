@@ -20,7 +20,7 @@ namespace Application.Escrow_schedule
                 RuleFor(x => x.escrow_type).NotEmpty();
                 RuleFor(x => x.name).NotEmpty();
                 RuleFor(x => x.account_no).NotEmpty().Length(12);
-                RuleFor(x => x.routing_no).NotEmpty().Length(6);
+                RuleFor(x => x.routing_no).NotEmpty().Must(x => x.ToString().Length ==9);
                 RuleFor(x => x.payment_mode).NotEmpty().Must(mode=> Enum.TryParse(typeof(PaymentModes), mode, out _)).WithMessage("Invalid payment mode.");
                 RuleFor(x => x.frequency).NotEmpty().Must(mode=> Enum.TryParse(typeof(Bene_Frequency), mode, out _)).WithMessage("Invalid Frequency.");;
             }
