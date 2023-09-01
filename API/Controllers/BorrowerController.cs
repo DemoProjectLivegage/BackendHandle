@@ -3,6 +3,7 @@ using Application.DTO;
 using Application.LoanInformations;
 using Application.LoansDetails;
 using Application.PaymentScheduleService;
+using AutoMapper;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,13 @@ namespace API.Controllers
 {
     public class BorrowerController : BaseAPIController
     {
+        private readonly IMapper _mapper;
+        public BorrowerController(IMapper mapper)
+        {
+            _mapper = mapper;
+
+        }
+
         [HttpGet] //api/borrower
         public async Task<ActionResult<List<BorrowerDetailsWithLoanInfo>>> GetBorrowers()
         {
@@ -40,8 +48,10 @@ namespace API.Controllers
 
                     }
                 }
-            }catch(Exception e){
-                Console.WriteLine("\n\nError"+e.Message+"\n\n");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("\n\nError" + e.Message + "\n\n");
                 return BadRequest("Error");
             }
             // int id = 1;
@@ -52,22 +62,32 @@ namespace API.Controllers
 
         [HttpGet("dynamic/")]
 
-        public async Task<ActionResult<dynamic_details>> GetLoanDetails(int id,DateOnly date)
+        public async Task<ActionResult<dynamic_details>> GetLoanDetails(int id, DateOnly date)
         {
-            return await Mediator.Send(new Loandetail.Query { LoanInformationId = id , due_date=date });
+            return await Mediator.Send(new Loandetail.Query { LoanInformationId = id, due_date = date });
         }
 
         [HttpGet("loaninfo/{id}")]
-        public async Task<ActionResult<LoanInformation>> GetLoanInfo(int Id)
+        public async Task<ActionResult<LoanInformationDTO>> GetLoanInfo(int Id)
         {
-            return await Mediator.Send(new Loaninfodetail.Query { BorrowerId = Id });
+
+            LoanInformation info = await Mediator.Send(new Loaninfodetail.Query { BorrowerId = Id });
+
+            LoanInformationDTO dto = _mapper.Map<LoanInformationDTO>(info);
+
+            return dto;
         }
 
 
         [HttpGet("loan_details/{id}")]
         public async Task<ActionResult<LoanDetails>> GetLoanDetail(int Id)
         {
-            return await Mediator.Send(new LoanDetailsAPI.Query { LoanId = Id });
+            
+            LoanDetails loan = await Mediator.Send(new LoanDetailsAPI.Query { LoanId = Id });
+            // LoanDetailsDTO newList = _mapper.Map<LoanDetailsDTO>(loan);
+
+            return loan;
         }
+
     }
 }

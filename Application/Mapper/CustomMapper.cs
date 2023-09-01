@@ -15,7 +15,7 @@ namespace Application.Mapper
             .ForMember(dest => dest.Escrow_Balance, source=> source.MapFrom(source =>"$"+ source.Escrow_Balance)).ReverseMap();
 
             CreateMap<Payment_Hierarchy, TransactionDTO>()
-            .ForMember(dest => dest.SheduledAmount, source=> source.MapFrom(source =>"$"+ source.Monthly_Payment_Amount.ToString()))
+            .ForMember(dest => dest.ScheduledAmount, source=> source.MapFrom(source =>"$"+ source.Monthly_Payment_Amount.ToString()))
             .ForMember(dest => dest.ReceivedAmount, source=> source.MapFrom(source =>"$"+ source.actual_receive))
             .ForMember(dest => dest.InterestAmount, source=> source.MapFrom(source =>"$"+ source.interest))
             .ForMember(dest => dest.PrincipalAmount, source=> source.MapFrom(source =>"$"+ source.principal))
@@ -33,6 +33,18 @@ namespace Application.Mapper
             .ForMember(dest => dest.Escrow_Amount, source=> source.MapFrom(source =>"$"+ source.Escrow_Amount))
             .ForMember(dest => dest.Monthly_Payment_Amount, source=> source.MapFrom(source =>"$"+ source.Monthly_Payment_Amount))
             .ForMember(dest => dest.UPB_Amount, source=> source.MapFrom(source =>"$"+ source.UPB_Amount))
+            .ReverseMap();
+
+            CreateMap<LoanDetails, LoanDetailsDTO>()
+            .ForMember(dest => dest.PIPmtAmt, source=> source.MapFrom(source =>"$"+ source.PIPmtAmt))
+            .ForMember(dest => dest.UPBAmt, source=> source.MapFrom(source =>"$"+ source.UPBAmt))
+            .ForMember(dest => dest.TaxInsurancePmtAmt, source=> source.MapFrom(source =>"$"+ source.TaxInsurancePmtAmt))
+            .ReverseMap();
+
+            CreateMap<LoanInformation, LoanInformationDTO>()
+            .ForMember(dest => dest.NoteRatePercent, source=> source.MapFrom(source => source.NoteRatePercent+"%"))
+            .ForMember(dest => dest.TotalLoanAmount, source=> source.MapFrom(source =>"$"+ source.TotalLoanAmount))
+            .ForMember(dest => dest.LoanTerm, source=> source.MapFrom(source =>source.LoanTerm+" year"))
             .ReverseMap();
 
         }

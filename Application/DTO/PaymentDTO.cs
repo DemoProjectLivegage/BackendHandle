@@ -18,7 +18,5 @@ namespace Application.DTO
         public string Monthly_Payment_Amount {get; set;}
 
         public string UPB_Amount {get; set;}
-
-        public decimal Note_Interest_Rate {get; set;}
     }
 }

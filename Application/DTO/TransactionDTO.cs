@@ -9,7 +9,7 @@ namespace Application.DTO
     public class TransactionDTO
     {
         public DateOnly TransactionDate {get; set;}
-        public string SheduledAmount {get; set;}
+        public string ScheduledAmount {get; set;}
         public string ReceivedAmount {get; set;}
         public string InterestAmount {get; set;}
         public string PrincipalAmount {get; set;}

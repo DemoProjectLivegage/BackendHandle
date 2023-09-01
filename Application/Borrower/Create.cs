@@ -137,7 +137,6 @@ namespace Application.Borrower
                                     {
                                         NoteRatePercent = Convert.ToDecimal(data[i].NoteRatePercent),
                                         Escrow = data[i].Escrow,
-                                        TaxInsurancePmtAmt = data[i].TaxInsurancePmtAmt,
                                         TotalLoanAmount = data[i].TotalLoanAmount,
                                         LoanTerm = data[i].LoanTerm,
                                         LoanType = data[i].LoanType,
@@ -178,6 +177,7 @@ namespace Application.Borrower
                                         PIPmtAmt = data[i].PIPmtAmt,
                                         UPBAmt = data[i].UPBAmt,
                                         RemainingPayments = data[i].RemainingPayments,
+                                        TaxInsurancePmtAmt = data[i].TaxInsurancePmtAmt,
                                         PmtDueDate = data[i].PmtDueDate.AddMonths(1),
                                         LoanInformationId = loanInfo.LoanInformationId,
                                     });
@@ -199,7 +199,7 @@ namespace Application.Borrower
                              on information.LoanInformationId equals loan.LoanInformationId
                              select new Payment_Schedule
                              {
-                                 Escrow_Amount = information.TaxInsurancePmtAmt,
+                                 Escrow_Amount = loan.TaxInsurancePmtAmt,
                                  Due_Date = loan.PmtDueDate,
                                  UPB_Amount = loan.UPBAmt,
                                  TotalLoanAmount = information.TotalLoanAmount,

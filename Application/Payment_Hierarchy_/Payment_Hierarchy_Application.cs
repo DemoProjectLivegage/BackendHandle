@@ -115,7 +115,7 @@ namespace Application.Payment_Hierarchy_
                     
                     Payment_Schedule ps =await _context.Payment_Schedule.FindAsync(new_id);
                     ld.PIPmtAmt=ps.Principal_Amount+ ps.Interest_Amount;
-                    ld.UPBAmt=ps.UPB_Amount;
+                    ld.UPBAmt=ps.UPB_Amount+ps.Principal_Amount; // This is done for showing current month UPB amount.
                     ld.RemainingPayments=ps.RemainingPayments;
                     ld.PmtDueDate=ps.Due_Date;
                     

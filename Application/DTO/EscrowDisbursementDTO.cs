@@ -17,8 +17,8 @@ namespace Application.DTO
 
         public string Escrow_Name {get; set;}
 
-        public string Escrow_Balance {get; set;}
-
         public string disbursement_frequency {get; set;}
+        
+        public string Escrow_Balance {get; set;}
     }
 }
