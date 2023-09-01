@@ -7,6 +7,7 @@ namespace Application.DTO
 {
     public class LoanInformationDTO
     {
+    public int loanInformationId { get; set; }
     public int PriorServicerLoanId { get; set; }
     public DateOnly NoteDate { get; set; }
     public DateOnly LoanBoardingDate { get; set; }

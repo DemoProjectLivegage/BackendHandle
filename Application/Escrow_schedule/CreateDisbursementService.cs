@@ -55,7 +55,6 @@ namespace Application.Escrow_schedule
                 annualPaymnet += await findAnnualPaymentAsync(beneficiary_5);
 
                 decimal monthlyPayment = annualPaymnet / 12;
-
                 List<Escrow_Disbursement_Schedule> dueList = new List<Escrow_Disbursement_Schedule>();
 
                 decimal previousBalance = 0;
@@ -187,6 +186,7 @@ namespace Application.Escrow_schedule
                         list.Add(item);
                         var loan_details = context.LoanDetails.Find(item.Loan_Id );
                         loan_details.monthly_payment_amount = item.Monthly_Payment_Amount;
+                        loan_details.TaxInsurancePmtAmt = item.Escrow_Amount;
                         context.LoanDetails.Update(loan_details);
                     }
                 }

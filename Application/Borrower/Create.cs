@@ -249,7 +249,7 @@ namespace Application.Borrower
                             paymentList.Add(payment);
                             UPB_Amount = payment.UPB_Amount;
                             
-                            var loan_details = _context.LoanDetails.Find(item.Loan_Id);
+                            LoanDetails loan_details = _context.LoanDetails.Find(item.Loan_Id);
                             loan_details.monthly_payment_amount = payment.Monthly_Payment_Amount;
                             _context.LoanDetails.Update(loan_details);
                         }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {}
+    "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+    "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AKewat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AKewat\\Desktop\\BackendHandle\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\VSingh\\Desktop\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AKewat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
