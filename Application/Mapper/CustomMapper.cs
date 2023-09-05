@@ -16,14 +16,14 @@ namespace Application.Mapper
 
             CreateMap<Payment_Hierarchy, TransactionDTO>()
             .ForMember(dest => dest.ScheduledAmount, source=> source.MapFrom(source =>"$"+ source.Monthly_Payment_Amount.ToString()))
-            .ForMember(dest => dest.ReceivedAmount, source=> source.MapFrom(source =>"$"+ source.actual_receive))
-            .ForMember(dest => dest.InterestAmount, source=> source.MapFrom(source =>"$"+ source.interest))
-            .ForMember(dest => dest.PrincipalAmount, source=> source.MapFrom(source =>"$"+ source.principal))
-            .ForMember(dest => dest.EscrowAmount, source=> source.MapFrom(source =>"$"+ source.escrow))
-            .ForMember(dest => dest.LateCharges, source=> source.MapFrom(source =>"$"+ source.late_charge))
-            .ForMember(dest => dest.OtherFees, source=> source.MapFrom(source =>"$"+ source.other_fee))
-            .ForMember(dest => dest.Suspense, source=> source.MapFrom(source =>"$"+ source.suspence))
-            .ForMember(dest => dest.UPBAmount, source=> source.MapFrom(source =>"$"+ source.UPB_Amount))
+            .ForMember(dest => dest.ReceivedAmount, source=> source.MapFrom(source =>"$"+ Math.Round(source.actual_receive,2)))
+            .ForMember(dest => dest.InterestAmount, source=> source.MapFrom(source =>"$"+ Math.Round(source.interest,2)))
+            .ForMember(dest => dest.PrincipalAmount, source=> source.MapFrom(source =>"$"+ Math.Round(source.principal)))
+            .ForMember(dest => dest.EscrowAmount, source=> source.MapFrom(source =>"$"+ Math.Round(source.escrow)))
+            .ForMember(dest => dest.LateCharges, source=> source.MapFrom(source =>"$"+ Math.Round(source.late_charge)))
+            .ForMember(dest => dest.OtherFees, source=> source.MapFrom(source =>"$"+ Math.Round(source.other_fee)))
+            .ForMember(dest => dest.Suspense, source=> source.MapFrom(source =>"$"+ Math.Round(source.suspence)))
+            .ForMember(dest => dest.UPBAmount, source=> source.MapFrom(source =>"$"+ Math.Round(source.UPB_Amount)))
             .ForMember(dest => dest.TransactionDate, source=> source.MapFrom(source =>source.date)).ReverseMap();
 
 

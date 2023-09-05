@@ -185,7 +185,7 @@ namespace Application.Escrow_schedule
                         item.Monthly_Payment_Amount = item.Principal_Amount + item.Interest_Amount + item.Escrow_Amount;
                         list.Add(item);
                         var loan_details = context.LoanDetails.Find(item.Loan_Id );
-                        loan_details.monthly_payment_amount = item.Monthly_Payment_Amount;
+                        loan_details.monthly_payment_amount = item.Principal_Amount + item.Interest_Amount + item.Escrow_Amount;
                         loan_details.TaxInsurancePmtAmt = item.Escrow_Amount;
                         context.LoanDetails.Update(loan_details);
                     }

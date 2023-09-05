@@ -21,7 +21,7 @@ namespace Domain
         [Column(TypeName = "decimal(8,2)")]
         public decimal TaxInsurancePmtAmt { get; set; }
         public required DateOnly PmtDueDate { get; set; }
-        [Column(TypeName = "decimal(8,2)")]
+         [Column(TypeName = "decimal(8,2)")]
         public decimal monthly_payment_amount { get; set; } = 0;
         [ForeignKey("{LoanInformation}")]
         public int LoanInformationId { get; set; }

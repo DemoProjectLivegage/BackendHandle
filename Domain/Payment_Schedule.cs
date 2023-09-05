@@ -13,29 +13,29 @@ namespace Domain
 
         public DateOnly Due_Date {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal Principal_Amount {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal Interest_Amount {get; set;}
 
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal Escrow_Amount {get; set;}
         
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal Monthly_Payment_Amount {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal UPB_Amount {get; set;}
 
         [ForeignKey("LoanDetails")]
         public int Loan_Id {get; set;}
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,3)")]
         public decimal Note_Interest_Rate {get; set;}
 
-        [Column(TypeName = "decimal(10,2)")]
+        [Column(TypeName = "decimal(10,3)")]
         public decimal TotalLoanAmount {get; set;}
         public int RemainingPayments {get; set;}
 
