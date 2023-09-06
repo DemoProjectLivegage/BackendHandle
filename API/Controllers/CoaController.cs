@@ -16,7 +16,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCOA()
         {
-            return Ok(await Mediator.Send(new GetAllCOA.Query()));
+            return Ok(await Mediator.Send(new ShowAllGL.Query()));
         }
     }
 }

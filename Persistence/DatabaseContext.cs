@@ -30,10 +30,6 @@ namespace Persistence
                 .HasIndex(col => col.coa_name)
                 .IsUnique();
             
-            builder.Entity<GeneralLedger>()
-                .HasIndex(col => col.gl_name)
-                .IsUnique();
-            
             builder.Entity<COA>()
                 .HasMany(e => e.gl_list)
                 .WithOne(e => e.COA)

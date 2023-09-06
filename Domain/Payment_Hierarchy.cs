@@ -33,6 +33,6 @@ namespace Domain
         [Column(TypeName = "decimal(8,2)")] 
         public decimal suspence {set; get;}
         [Column(TypeName = "decimal(8,2)")]   
-        public decimal UPB_Amount {set; get;}   
+        public decimal UPB_Amount {set; get;}  
     }
 }
