@@ -47,6 +47,8 @@ namespace Application.Mapper
             .ForMember(dest => dest.LoanTerm, source=> source.MapFrom(source =>source.LoanTerm+" year"))
             .ReverseMap();
 
+            CreateMap<COA, COA_DTO>();
+            CreateMap<GeneralLedger, GL_DTO>();
         }
         
     }

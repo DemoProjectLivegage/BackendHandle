@@ -1,10 +1,4 @@
-﻿
-
-
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace Domain;
+﻿namespace Domain;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,7 +11,7 @@ public class BorrowerDetails
    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
    public int BorrowerId { set; get; }
 
-  [Required]
+   [Required]
    public string FullName { set; get; }
 
    public string ContactNumber { set; get; }
@@ -31,6 +25,6 @@ public class BorrowerDetails
 
    public string Occupation { get; set; }
 
- 
+
 
 }

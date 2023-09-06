@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Application.DTO;
-using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.LoansDetails
 {
-  public class Loandetail
+    public class Loandetail
   {
     public class Query : IRequest<dynamic_details>
     {
