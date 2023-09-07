@@ -1,6 +1,3 @@
-using System.ComponentModel;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
 namespace Domain
 {
     public class GeneralLedger

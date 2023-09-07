@@ -9,11 +9,11 @@ namespace Application.GL
 {
     public partial class GetAllCOA
     {
-        public class Query : IRequest<List<COA_DTO>>
+        public class Query : IRequest<List<OnlyCOA>>
         {
         }
 
-        public class Handler : IRequestHandler<Query, List<COA_DTO>>
+        public class Handler : IRequestHandler<Query, List<OnlyCOA>>
         {
             private readonly DatabaseContext _context;
             private readonly IMapper _mapper ;
@@ -23,10 +23,10 @@ namespace Application.GL
                 _context = context;
 
             }
-            public async Task<List<COA_DTO>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<OnlyCOA>> Handle(Query request, CancellationToken cancellationToken)
             {
-                List<COA> data = await _context.COA.Include(b => b.gl_list).ToListAsync();
-                List<COA_DTO> response = _mapper.Map<List<COA_DTO>>(data);
+                List<COA> data = await _context.COA.ToListAsync();
+                List<OnlyCOA> response = _mapper.Map<List<OnlyCOA>>(data);
                 return response;
             }
         }
