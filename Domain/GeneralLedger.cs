@@ -14,7 +14,7 @@ namespace Domain
 
         public string description { get; set; } //specific detail of disbursing payment in a head
         public int coa_id{get; set; }
-        public COA COA { get; set; } = null;
+       public COA COA { get; set; } = null;
     }
 }
 
