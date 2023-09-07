@@ -10,6 +10,7 @@ namespace API.Controllers
         public async Task<IActionResult> CreateGL([FromBody] GeneralLedger gl)
         {
             return Ok(await Mediator.Send(new CreateGL.Command { data = gl }));
+            
         }
     }
 }

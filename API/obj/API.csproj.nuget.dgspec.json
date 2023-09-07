@@ -137,8 +137,8 @@
               "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               },
-              "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
-                "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"
+              "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+                "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -267,14 +267,14 @@
         }
       }
     },
-    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\BackendHandle\\Persistence\\obj\\",
+        "outputPath": "d:\\Demo\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",

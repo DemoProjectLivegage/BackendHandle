@@ -13,10 +13,10 @@ namespace API.Controllers
             await Mediator.Send(new CreateCOA.Command { coa = data });
             return Ok(data);
         }
-        [HttpGet]
-        public async Task<IActionResult> GetAllCOA()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllCOA( int id)
         {
-            return Ok(await Mediator.Send(new ShowAllGL.Query()));
+            return Ok(await Mediator.Send(new ShowAllGL.Query{Id=id}));
         }
     }
 }
