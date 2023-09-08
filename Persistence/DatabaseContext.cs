@@ -35,6 +35,9 @@ namespace Persistence
                 .WithOne(e => e.COA)
                 .HasForeignKey(e => e.coa_id)
                 .IsRequired(true);
-        }
+        
+        
+        }  
+    
     }
 }

@@ -3592,19 +3592,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
+    "C:\\Users\\IMehta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "D:\\Demo\\BackendHandle\\Application\\obj\\",
+      "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\IMehta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\IMehta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3618,11 +3618,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
+            "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Domain\\Domain.csproj"
             },
-            "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
-              "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"
+            "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\Users\\IMehta\\Desktop\\BackendHandle\\Persistence\\Persistence.csproj"
             }
           }
         }

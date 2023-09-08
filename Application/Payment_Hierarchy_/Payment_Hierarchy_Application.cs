@@ -85,9 +85,11 @@ namespace Application.Payment_Hierarchy_
                         {
                             modify.escrow = waterfall.Escrow_Amount;
                             remaining = remaining - waterfall.Escrow_Amount;
-                            if (remaining > 0 && request.id == 3)
+                            if (remaining > 0)
                             {
-                                if (remaining <= 10)
+                                if(request.id==3)
+                                {
+                                    if (remaining <= 10)
                                 {
                                     modify.late_charge = remaining;
 
@@ -96,6 +98,10 @@ namespace Application.Payment_Hierarchy_
                                 {
                                     modify.late_charge = 10;
                                     modify.suspence = remaining - 10;
+                                }
+                                }
+                                else{
+                                   modify.suspence=remaining; 
                                 }
                             }
                         }
@@ -108,9 +114,11 @@ namespace Application.Payment_Hierarchy_
                     else
                     {
                         remaining = remaining - waterfall.Escrow_Amount;
-                        if (remaining > 0 && request.id == 3)
+                        if (remaining > 0)
                         {
-                            if (remaining <= 10)
+                            if(request.id==3)
+                            {
+                                  if (remaining <= 10)
                             {
                                 modify.late_charge = remaining;
 
@@ -120,8 +128,25 @@ namespace Application.Payment_Hierarchy_
                                 modify.late_charge = 10;
                                 modify.suspence = remaining - 10;
                             }
+                            }
+                            else{
+                                modify.suspence=remaining;
+                            }
+                          
                         }
                     }
+                    // if (waterfall.Principal_Amount <= remaining)
+                    // {
+                    //     modify.principal = waterfall.Principal_Amount;//147
+                    //     remaining = remaining - waterfall.Principal_Amount;//246-147=99
+                    //     modify.UPB_Amount = waterfall.UPB_Amount;
+                    // }
+                    // else
+                    // {
+                    //     modify.principal = remaining;
+                    //     modify.UPB_Amount = waterfall.UPB_Amount + (modify.principal - remaining);
+                    //     remaining = 0;
+                    // }
 
 
                     _context.AddRange(modify);
