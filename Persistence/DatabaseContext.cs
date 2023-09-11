@@ -24,19 +24,32 @@ namespace Persistence
         public DbSet<Payment_Hierarchy> Payment_Hierarchy { get; set; }
         public DbSet<GeneralLedger> GeneralLedger { get; set; }
         public DbSet<COA> COA { get; set; }
+        public DbSet<Transactions> Transaction { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<COA>()
                 .HasIndex(col => col.coa_name)
                 .IsUnique();
+
+            builder.Entity<Transactions>()
+                .HasIndex(col => col.transaction_name)
+                .IsUnique();
+
+            builder.Entity<Transactions>()
+                .HasOne(t => t.to_generalLedger)
+                .WithMany()
+                .HasForeignKey(t => t.to);
+            builder.Entity<Transactions>()
+                .HasOne(t => t.from_GeneralLedger)
+                .WithMany()
+                .HasForeignKey(t => t.from)
+                .IsRequired(false);
             
             builder.Entity<COA>()
                 .HasMany(e => e.gl_list)
                 .WithOne(e => e.COA)
                 .HasForeignKey(e => e.coa_id)
                 .IsRequired(true);
-        
-        
         }  
     
     }

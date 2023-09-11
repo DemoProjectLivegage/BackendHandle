@@ -57,6 +57,7 @@ try
 {
     var context = services.GetRequiredService<DatabaseContext>();
     await context.Database.MigrateAsync();
+    await SeedData.CreateTransactionData(context);
 }
 catch (Exception ex)
 {
