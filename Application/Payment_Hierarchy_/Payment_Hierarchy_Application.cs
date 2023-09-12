@@ -46,7 +46,9 @@ namespace Application.Payment_Hierarchy_
                         modify.suspence = request.incoming_amount;
                         remaining = 0;
                         modify.UPB_Amount = waterfall.UPB_Amount + waterfall.Principal_Amount;
-                        await _context.Payment_Hierarchy.AddAsync(modify);
+                        _context.Payment_Hierarchy.Add(modify);
+                        // Create a GL mapping as per payment hierarchy.
+                        CreatePaymentGL.map(_context, modify,"suspence");
                         await _context.SaveChangesAsync();
                         return Unit.Value;
                     }
@@ -136,7 +138,13 @@ namespace Application.Payment_Hierarchy_
                         }
                     }
 
-                    _context.AddRange(modify);
+                    _context.Payment_Hierarchy.AddRange(modify);
+                    // Create a GL mapping as per payment hierarchy.
+                    try{
+                        CreatePaymentGL.map(_context, modify,"all");
+                    }catch(Exception e){
+                        Console.WriteLine("\n\n\n\nError:"+e.Message+"\n\n\n\n\n");
+                    }
                     _context.SaveChanges();
 
                     var ld = await _context.LoanDetails.FindAsync(request.id);

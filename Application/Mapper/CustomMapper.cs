@@ -50,6 +50,8 @@ namespace Application.Mapper
             CreateMap<COA, COA_DTO>();
             CreateMap<GeneralLedger, GL_DTO>();
             CreateMap<COA, OnlyCOA>();
+
+            
         }
         
     }

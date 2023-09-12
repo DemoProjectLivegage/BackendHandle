@@ -34,6 +34,11 @@ namespace Persistence
                     transaction_name="Late Charge Assessed",
 
                 },
+                new Transactions{
+                    Id=6,
+                    transaction_name="Suspence",
+
+                },
             };
             await context.Transaction.AddRangeAsync(transactions);
             await context.SaveChangesAsync();

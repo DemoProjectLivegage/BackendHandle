@@ -21,7 +21,6 @@ namespace Application.GL
             public Handler (DatabaseContext context)
             {
             _context = context;
-                
             }
             public async Task<List<Transactions>> Handle(Query request, CancellationToken cancellationToken)
             {

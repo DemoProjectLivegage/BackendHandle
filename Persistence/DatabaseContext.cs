@@ -25,6 +25,7 @@ namespace Persistence
         public DbSet<GeneralLedger> GeneralLedger { get; set; }
         public DbSet<COA> COA { get; set; }
         public DbSet<Transactions> Transaction { get; set; }
+        public DbSet<AllGeneralLedger> UserTransactions { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<COA>()
@@ -38,11 +39,11 @@ namespace Persistence
             builder.Entity<Transactions>()
                 .HasOne(t => t.to_generalLedger)
                 .WithMany()
-                .HasForeignKey(t => t.to);
+                .HasForeignKey(t => t.to_account);
             builder.Entity<Transactions>()
                 .HasOne(t => t.from_GeneralLedger)
                 .WithMany()
-                .HasForeignKey(t => t.from)
+                .HasForeignKey(t => t.from_account)
                 .IsRequired(false);
             
             builder.Entity<COA>()

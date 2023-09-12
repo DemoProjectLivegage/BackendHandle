@@ -9,15 +9,15 @@ namespace API.Controllers
         
 
         [HttpPost]
-        public IActionResult CreateTransactions([FromBody] Transactions transaction){
+        public async Task<ActionResult> CreateTransactions( Transactions transaction){
   
-
-            return Ok(Mediator.Send(new AllTransaction.Command{transaction=transaction}));
+            return Ok(await Mediator.Send(new AllTransaction.Command{transaction=transaction}));
         }
         [HttpGet]
         public async Task<ActionResult<Transactions>> GetTransaction()
         {
-            return Ok(await Mediator.Send(new GetTransaction.Query()));
+            var s = await Mediator.Send(new GetTransaction.Query());
+            return Ok();
         }
     }
 }

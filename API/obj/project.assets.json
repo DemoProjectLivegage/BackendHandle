@@ -4515,11 +4515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Demo\\BackendHandle\\API\\API.csproj",
+      "projectUniqueName": "D:\\Demo\\BackendHandle\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "d:\\Demo\\BackendHandle\\API\\API.csproj",
+      "projectPath": "D:\\Demo\\BackendHandle\\API\\API.csproj",
       "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "d:\\Demo\\BackendHandle\\API\\obj\\",
+      "outputPath": "D:\\Demo\\BackendHandle\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4536,8 +4536,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "d:\\Demo\\BackendHandle\\Application\\Application.csproj": {
-              "projectPath": "d:\\Demo\\BackendHandle\\Application\\Application.csproj"
+            "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {
+              "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj"
             }
           }
         }

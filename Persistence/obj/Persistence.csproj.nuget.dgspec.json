@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {}
+    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "d:\\Demo\\BackendHandle\\Domain\\obj\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,14 +69,14 @@
         }
       }
     },
-    "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
+    "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+        "projectPath": "D:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "d:\\Demo\\BackendHandle\\Persistence\\obj\\",
+        "outputPath": "D:\\Demo\\BackendHandle\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
-                "projectPath": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
+              "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
               }
             }
           }
