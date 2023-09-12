@@ -8,7 +8,7 @@ namespace Domain
         public int LoanId { get; set; }
         public decimal from_account_balance { get; set; }
         public decimal to_account_balance { get; set; }
-        public int Transaction { get; set; }
+        public int TransactionId { get; set; }
         public Transactions transaction {set; get;}
     }
 }

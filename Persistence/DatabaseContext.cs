@@ -26,6 +26,14 @@ namespace Persistence
         public DbSet<COA> COA { get; set; }
         public DbSet<Transactions> Transaction { get; set; }
         public DbSet<AllGeneralLedger> UserTransactions { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseLazyLoadingProxies();
+            }
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<COA>()
@@ -45,13 +53,13 @@ namespace Persistence
                 .WithMany()
                 .HasForeignKey(t => t.from_account)
                 .IsRequired(false);
-            
+
             builder.Entity<COA>()
                 .HasMany(e => e.gl_list)
                 .WithOne(e => e.COA)
                 .HasForeignKey(e => e.coa_id)
                 .IsRequired(true);
-        }  
-    
+        }
+
     }
 }

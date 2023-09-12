@@ -8,5 +8,6 @@ namespace Application.DTO
         public string operation { get; set; }
         public string description { get; set; }
         public decimal value { get; set; } = 0;
+        
     }
 }

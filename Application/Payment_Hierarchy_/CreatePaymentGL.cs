@@ -31,7 +31,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.Monthly_Payment_Amount;
                     gl.to_account_balance = data.Monthly_Payment_Amount;
-                    gl.Transaction = t_monthly.Id;
+                    gl.TransactionId = t_monthly.Id;
                     gl_list.Add(gl);
 
                 }
@@ -43,7 +43,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.suspence;
                     gl.to_account_balance = data.suspence;
-                    gl.Transaction = t_suspence.Id;
+                    gl.TransactionId = t_suspence.Id;
                     gl_list.Add(gl);
 
                 }
@@ -55,7 +55,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.principal;
                     gl.to_account_balance = data.principal;
-                    gl.Transaction = t_principal.Id;
+                    gl.TransactionId = t_principal.Id;
                     gl_list.Add(gl);
 
                 }
@@ -67,7 +67,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.escrow;
                     gl.to_account_balance = data.escrow;
-                    gl.Transaction = t_escrow.Id;
+                    gl.TransactionId = t_escrow.Id;
                     gl_list.Add(gl);
 
                 }
@@ -79,7 +79,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.interest;
                     gl.to_account_balance = data.interest;
-                    gl.Transaction = t_interest.Id;
+                    gl.TransactionId = t_interest.Id;
                     gl_list.Add(gl);
 
                 }
@@ -91,7 +91,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.other_fee;
                     gl.to_account_balance = data.other_fee;
-                    gl.Transaction = t_other.Id;
+                    gl.TransactionId = t_other.Id;
                     gl_list.Add(gl);
 
                 }
@@ -103,7 +103,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.late_charge;
                     gl.to_account_balance = data.late_charge;
-                    gl.Transaction = t_late.Id;
+                    gl.TransactionId = t_late.Id;
                     gl_list.Add(gl);
 
                 }
@@ -115,7 +115,7 @@ namespace Application.Payment_Hierarchy_
                     gl.LoanId = data.Loan_id;
                     gl.from_account_balance = data.UPB_Amount;
                     gl.to_account_balance = data.UPB_Amount;
-                    gl.Transaction = t_upb.Id;
+                    gl.TransactionId = t_upb.Id;
                     gl_list.Add(gl);
 
                 }
@@ -128,7 +128,7 @@ namespace Application.Payment_Hierarchy_
                 Transactions transaction = context.Transaction.Where(x => x.transaction_name.ToLower().Contains(type)).FirstOrDefault();
                 gl.from_account_balance = data.suspence;
                 gl.to_account_balance = data.suspence;
-                gl.Transaction = transaction.Id;
+                gl.TransactionId = transaction.Id;
                 gl_list.Add(gl);
 
             }

@@ -14,10 +14,10 @@ namespace API.Controllers
             return Ok(await Mediator.Send(new AllTransaction.Command{transaction=transaction}));
         }
         [HttpGet]
-        public async Task<ActionResult<Transactions>> GetTransaction()
+        public async Task<ActionResult<AllGeneralLedger>> GetTransaction()
         {
             var s = await Mediator.Send(new GetTransaction.Query());
-            return Ok();
+            return Ok(s);
         }
     }
 }
