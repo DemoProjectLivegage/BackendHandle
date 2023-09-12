@@ -707,19 +707,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RASharma\\.nuget\\packages\\": {}
+    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Domain\\obj\\",
+      "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
+      "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -770,7 +770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

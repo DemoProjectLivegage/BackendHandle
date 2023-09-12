@@ -24,7 +24,7 @@ namespace Application.GL
             }
             public async Task<List<Transactions>> Handle(Query request, CancellationToken cancellationToken)
             {
-               return await _context.Transaction.ToListAsync();
+               return await _context.Transaction.Include(x=>x.from_GeneralLedger).Include(x=>x.to_generalLedger).ToListAsync();
             }
         }
     }
