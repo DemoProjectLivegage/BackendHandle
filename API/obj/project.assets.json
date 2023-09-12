@@ -4639,19 +4639,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
+    "C:\\Users\\RASharma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Demo\\BackendHandle\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Demo\\BackendHandle\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "D:\\Demo\\BackendHandle\\API\\obj\\",
+      "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4659,14 +4659,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Demo\\BackendHandle\\Application\\Application.csproj": {
-              "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj"
+            "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Application\\Application.csproj"
             }
           }
         }
@@ -4743,7 +4744,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
       }
     }
   }

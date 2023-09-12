@@ -690,3 +690,5 @@ C:\Users\VSingh\Desktop\BackendHandle\API\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\VSingh\Desktop\BackendHandle\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Demo\BackendHandle\API\bin\Debug\net7.0\Castle.Core.dll
 D:\Demo\BackendHandle\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\RASharma\Desktop\training\Projects_Main\BackendHandle\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll

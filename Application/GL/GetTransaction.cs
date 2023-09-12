@@ -11,20 +11,20 @@ namespace Application.GL
 {
     public class GetTransaction
     {
-        public class Query :IRequest<List<AllGeneralLedger>>
+        public class Query :IRequest<List<Transactions>>
         {
 
         }
-        public class Handler : IRequestHandler<Query, List<AllGeneralLedger>>
+        public class Handler : IRequestHandler<Query, List<Transactions>>
         {
         private readonly DatabaseContext _context;
             public Handler (DatabaseContext context)
             {
             _context = context;
             }
-            public async Task<List<AllGeneralLedger>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<Transactions>> Handle(Query request, CancellationToken cancellationToken)
             {
-               return await _context.UserTransactions.Include(x=>x.transaction.from_GeneralLedger).ToListAsync();
+               return await _context.Transaction.ToListAsync();
             }
         }
     }

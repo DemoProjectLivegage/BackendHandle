@@ -3442,19 +3442,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VSingh\\.nuget\\packages\\": {}
+    "C:\\Users\\RASharma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj",
-      "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "d:\\Demo\\BackendHandle\\Persistence\\obj\\",
+      "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Persistence\\Persistence.csproj",
+      "packagesPath": "C:\\Users\\RASharma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RASharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3468,8 +3468,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
+            "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\RASharma\\Desktop\\training\\Projects_Main\\BackendHandle\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3521,7 +3521,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
       }
     }
   }
