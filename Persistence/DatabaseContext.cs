@@ -27,13 +27,6 @@ namespace Persistence
         public DbSet<Transactions> Transaction { get; set; }
         public DbSet<AllGeneralLedger> UserTransactions { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseLazyLoadingProxies();
-            }
-        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<COA>()

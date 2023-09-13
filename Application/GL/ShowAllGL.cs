@@ -32,14 +32,18 @@ namespace Application.GL
                 if (request.Id != 0)
                 {
                     incoming_payments = _context.Payment_Hierarchy.Where(x => x.Loan_id == request.Id).ToList();
-
                 }
                 else
                 {
-                       incoming_payments=_context.Payment_Hierarchy.ToList();
+                    incoming_payments = _context.Payment_Hierarchy.ToList();
                 }
 
                 List<COA_DTO> COA_List = _mapper.Map<List<COA_DTO>>(await _context.COA.Include(b => b.gl_list).ToListAsync());
+                List<Transactions> all_gl = _context.Transaction.ToList();
+
+                // Here we are checking weather the transaction mapping is done or not. If not then it will return null.
+                if (all_gl[0].from_account == null) return null;
+
                 if (!incoming_payments.Any())
                 {
                     return null;
@@ -54,6 +58,10 @@ namespace Application.GL
                             if (x.description.ToLower().Contains("interest") && item.interest != 0)
                             {
                                 x.value += item.interest;
+                            }
+                            if (x.description.ToLower().Contains("month") && item.Monthly_Payment_Amount != 0)
+                            {
+                                x.value += item.Monthly_Payment_Amount;
                             }
                             if (x.description.ToLower().Contains("principal") && item.principal != 0)
                             {

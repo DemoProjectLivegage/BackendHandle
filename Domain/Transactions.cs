@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 namespace Domain
 {
     public class Transactions
@@ -7,6 +9,8 @@ namespace Domain
 
         public int? from_account { get; set; }
         public int? to_account { get; set; }
+
+        // Navigation property
         public GeneralLedger from_GeneralLedger { get; set; }=null;
         public GeneralLedger to_generalLedger { get; set; }=null;
     }

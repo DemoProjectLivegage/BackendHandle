@@ -1,6 +1,5 @@
 using Domain;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using Persistence;
 
 namespace Application.GL

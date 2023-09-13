@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {}
+    "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+    "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectUniqueName": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
+        "projectPath": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\BackendHandle\\Domain\\obj\\",
+        "outputPath": "d:\\Demo\\BackendHandle\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
