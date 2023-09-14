@@ -3726,11 +3726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Demo\\BackendHandle\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "d:\\Demo\\BackendHandle\\Application\\Application.csproj",
+      "projectPath": "D:\\Demo\\BackendHandle\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\VSingh\\.nuget\\packages\\",
-      "outputPath": "d:\\Demo\\BackendHandle\\Application\\obj\\",
+      "outputPath": "D:\\Demo\\BackendHandle\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\VSingh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3747,8 +3747,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
-              "projectPath": "d:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
+            "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Demo\\BackendHandle\\Domain\\Domain.csproj"
             },
             "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj": {
               "projectPath": "d:\\Demo\\BackendHandle\\Persistence\\Persistence.csproj"

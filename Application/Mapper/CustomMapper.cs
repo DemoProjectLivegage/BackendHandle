@@ -51,7 +51,10 @@ namespace Application.Mapper
             CreateMap<GeneralLedger, GL_DTO>();
             CreateMap<COA, OnlyCOA>();
 
-            
+
+            // Mapping for dashboard
+
+            CreateMap<Payment_Schedule, BarDTO>().ReverseMap();
         }
         
     }
